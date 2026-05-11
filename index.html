@@ -2,7 +2,7 @@
 <html lang="es">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
 <title>Mattias 🌌💖</title>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -15,6 +15,7 @@ margin:0;
 padding:0;
 box-sizing:border-box;
 font-family:'Poppins',sans-serif;
+-webkit-tap-highlight-color:transparent;
 }
 
 html{
@@ -47,20 +48,22 @@ gap:20px;
 cursor:pointer;
 transition:1s;
 text-align:center;
-padding:20px;
+padding:30px;
 }
 
 .intro-screen h1{
-font-size:6rem;
+font-size:5rem;
 animation:pulse 2s infinite;
 }
 
 .intro-screen h2{
-font-size:2rem;
+font-size:1.8rem;
+line-height:1.4;
 }
 
 .intro-screen p{
 color:#d1d5db;
+font-size:1rem;
 }
 
 .intro-screen.hidden{
@@ -102,23 +105,23 @@ transform:scale(1.5);
 
 .galaxy{
 position:fixed;
-width:900px;
-height:900px;
+width:500px;
+height:500px;
 border-radius:50%;
-filter:blur(100px);
+filter:blur(90px);
 z-index:-5;
 animation:floatGalaxy 15s infinite alternate;
 }
 
 .g1{
-top:-250px;
-left:-250px;
+top:-150px;
+left:-150px;
 background:radial-gradient(circle,rgba(168,85,247,.3),transparent 70%);
 }
 
 .g2{
-bottom:-250px;
-right:-250px;
+bottom:-150px;
+right:-150px;
 background:radial-gradient(circle,rgba(236,72,153,.25),transparent 70%);
 }
 
@@ -136,7 +139,7 @@ transform:translateY(40px);
 .heart{
 position:fixed;
 top:-50px;
-font-size:25px;
+font-size:22px;
 animation:fallHeart linear forwards;
 z-index:999;
 pointer-events:none;
@@ -153,27 +156,27 @@ opacity:0;
 
 .f1-car{
 position:fixed;
-font-size:42px;
+font-size:30px;
 z-index:2;
 opacity:.5;
-animation:driveRight 15s linear infinite;
+animation:driveRight 12s linear infinite;
 }
 
 .f1-1{
-top:20%;
+top:18%;
 }
 
 .f1-2{
-top:75%;
-animation-delay:8s;
+top:72%;
+animation-delay:6s;
 }
 
 @keyframes driveRight{
 from{
-transform:translateX(-20vw);
+transform:translateX(-30vw);
 }
 to{
-transform:translateX(120vw);
+transform:translateX(130vw);
 }
 }
 
@@ -181,28 +184,22 @@ transform:translateX(120vw);
 
 .music-button{
 position:fixed;
-top:20px;
-right:20px;
+top:15px;
+right:15px;
 background:rgba(255,255,255,.1);
-padding:15px 20px;
+padding:10px 16px;
 border-radius:999px;
 backdrop-filter:blur(10px);
-cursor:pointer;
 z-index:9999;
-transition:.3s;
-}
-
-.music-button:hover{
-transform:scale(1.08);
+font-size:.9rem;
 }
 
 /* CONTENIDO */
 
 .container{
-width:90%;
-max-width:1200px;
+width:92%;
 margin:auto;
-padding:50px 0;
+padding:30px 0;
 }
 
 .hero{
@@ -212,11 +209,13 @@ justify-content:center;
 align-items:center;
 text-align:center;
 flex-direction:column;
+padding-top:80px;
 }
 
 .hero h1{
-font-size:6rem;
+font-size:3rem;
 font-weight:800;
+line-height:1.1;
 background:linear-gradient(to right,#ff7ac6,#fff,#7dd3fc);
 -webkit-background-clip:text;
 -webkit-text-fill-color:transparent;
@@ -224,225 +223,184 @@ margin-bottom:20px;
 }
 
 .hero p{
-max-width:900px;
-line-height:1.9;
-font-size:1.3rem;
+line-height:1.8;
+font-size:1rem;
 color:#d1d5db;
 }
 
 .badges{
 display:flex;
-gap:15px;
+gap:10px;
 flex-wrap:wrap;
 justify-content:center;
-margin-top:40px;
+margin-top:30px;
 }
 
 .badge{
 background:rgba(255,255,255,.08);
-padding:14px 25px;
+padding:10px 16px;
 border-radius:999px;
 backdrop-filter:blur(10px);
+font-size:.8rem;
 }
 
 .section{
-margin-top:120px;
+margin-top:90px;
 }
 
 .section h2{
 text-align:center;
-font-size:3.5rem;
-margin-bottom:50px;
+font-size:2rem;
+margin-bottom:35px;
 color:#ff9ed6;
+line-height:1.3;
 }
 
-.box{
+.box,
+.category-box,
+.quote-card,
+.love-game,
+details{
 background:rgba(255,255,255,.06);
 border:1px solid rgba(255,255,255,.08);
-padding:40px;
-border-radius:35px;
+padding:25px;
+border-radius:28px;
 backdrop-filter:blur(12px);
-line-height:2;
-font-size:1.1rem;
+line-height:1.9;
+font-size:.98rem;
 color:#e5e7eb;
 }
 
 .gallery{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
-gap:30px;
+display:flex;
+flex-direction:column;
+gap:25px;
 }
 
 .card{
 background:rgba(255,255,255,.06);
-border-radius:30px;
+border-radius:28px;
 overflow:hidden;
-transition:.4s;
 backdrop-filter:blur(12px);
-}
-
-.card:hover{
-transform:translateY(-10px);
 }
 
 .card img{
 width:100%;
-height:450px;
+height:340px;
 object-fit:cover;
 }
 
 .card-content{
-padding:25px;
+padding:20px;
 }
 
 .card-content h3{
+margin-bottom:12px;
+color:#ffb3de;
+font-size:1.2rem;
+}
+
+.quote-grid{
+display:flex;
+flex-direction:column;
+gap:20px;
+}
+
+.category-box{
+margin-bottom:20px;
+}
+
+.category-title{
+font-size:1.4rem;
 margin-bottom:15px;
 color:#ffb3de;
 }
 
-.quote-grid{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-gap:25px;
-}
-
-.quote-card{
-background:rgba(255,255,255,.05);
-padding:30px;
-border-radius:30px;
-line-height:1.8;
-backdrop-filter:blur(10px);
-transition:.4s;
-}
-
-.quote-card:hover{
-transform:translateY(-8px);
-}
-
-.category-box{
-background:rgba(255,255,255,.05);
-padding:35px;
-border-radius:35px;
-backdrop-filter:blur(12px);
-margin-bottom:35px;
-transition:.4s;
-}
-
-.category-box:hover{
-transform:translateY(-5px);
-}
-
-.category-title{
-font-size:2rem;
-margin-bottom:20px;
-color:#ffb3de;
-}
-
-details{
-background:rgba(255,255,255,.05);
-padding:25px;
-border-radius:25px;
-margin-bottom:20px;
-cursor:pointer;
-}
-
 summary{
-font-size:1.2rem;
+font-size:1rem;
 font-weight:700;
 color:#ff9ed6;
 }
 
 details p{
-margin-top:20px;
-line-height:1.9;
-color:#d1d5db;
+margin-top:15px;
 }
 
 /* JUEGO */
 
 .love-game{
-background:rgba(255,255,255,.05);
-padding:50px;
-border-radius:35px;
 text-align:center;
-backdrop-filter:blur(12px);
 position:relative;
 overflow:hidden;
+min-height:260px;
 }
 
 .love-game h3{
-font-size:2rem;
-margin-bottom:40px;
+font-size:1.5rem;
+margin-bottom:35px;
 color:#ffb3de;
 }
 
 .buttons{
-display:flex;
-justify-content:center;
-gap:20px;
-flex-wrap:wrap;
 position:relative;
-height:150px;
+height:120px;
 }
 
 .buttons button{
 border:none;
-padding:18px 35px;
+padding:16px 28px;
 border-radius:999px;
-font-size:1.1rem;
-cursor:pointer;
-transition:.3s;
+font-size:1rem;
 font-weight:700;
+cursor:pointer;
+position:absolute;
 }
 
 .yes-btn{
 background:#ff5ca8;
 color:white;
-position:absolute;
+left:10%;
+top:20px;
 }
 
 .no-btn{
 background:#111827;
 color:white;
-}
-
-.buttons button:hover{
-transform:scale(1.08);
+right:10%;
+top:20px;
 }
 
 #answer-box{
-margin-top:40px;
-font-size:1.4rem;
-line-height:2;
-min-height:100px;
+margin-top:35px;
+font-size:1.1rem;
+line-height:1.8;
+min-height:90px;
 }
 
 /* FINAL */
 
 .final{
 text-align:center;
-padding:100px 30px;
+padding:80px 10px;
 }
 
 .final h2{
-font-size:5rem;
-margin-bottom:30px;
+font-size:2.5rem;
+margin-bottom:25px;
 color:#ffb3de;
 }
 
 .final p{
-max-width:900px;
-margin:auto;
 line-height:2;
-font-size:1.2rem;
+font-size:1rem;
 color:#d1d5db;
-margin-bottom:20px;
+margin-bottom:18px;
 }
 
 .big-love{
-font-size:7rem;
+font-size:4rem;
 text-align:center;
-margin-top:80px;
+margin-top:60px;
 animation:pulse 2s infinite;
 }
 
@@ -457,32 +415,15 @@ transform:scale(1.08);
 
 footer{
 text-align:center;
-padding:60px 20px;
+padding:50px 20px;
 color:#9ca3af;
-}
-
-@media(max-width:768px){
-
-.hero h1{
-font-size:3.5rem;
-}
-
-.section h2{
-font-size:2.5rem;
-}
-
-.final h2{
-font-size:3rem;
-}
-
+font-size:.9rem;
 }
 
 </style>
 </head>
 
 <body>
-
-<!-- INTRO -->
 
 <div class="intro-screen" onclick="startExperience()">
 
@@ -493,8 +434,6 @@ font-size:3rem;
 <p>(con Daylight de Taylor Swift 😭✨)</p>
 
 </div>
-
-<!-- SPOTIFY -->
 
 <iframe
 src="https://open.spotify.com/embed/track/3xYJScVfxByb61dYHTwiby?utm_source=generator"
@@ -527,16 +466,16 @@ allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-pictur
 
 <p>
 Pero sigues siendo el hombre más lindo,
-paciente, amoroso y especial del universo entero ✨
+paciente y especial del universo entero ✨
 </p>
 
 <div class="badges">
 <div class="badge">🏎️ Formula 1 lover</div>
 <div class="badge">🌙 Astronomy boy</div>
-<div class="badge">🎮 Gamer shooter</div>
-<div class="badge">👴 Oficialmente viejito</div>
+<div class="badge">🎮 Gamer</div>
+<div class="badge">👴 Viejito oficial</div>
 <div class="badge">🐶 Papá de Blacky</div>
-<div class="badge">🐱 Papá aprobado por Lokis</div>
+<div class="badge">🐱 Papá de Lokis</div>
 </div>
 
 </section>
@@ -547,50 +486,27 @@ paciente, amoroso y especial del universo entero ✨
 
 <div class="box">
 
-Gracias por siempre escucharme incluso cuando estoy todo el día reclamando y estresada 😭
+Gracias por escucharme siempre incluso cuando estoy reclamando todo el día 😭
 
 <br><br>
 
 Me encanta la calma que me transmites.
-Honestamente siento que mis días dejaron de ser oscuros y ahora son dorados contigo ✨
+Contigo mis días se sienten golden ✨
 
 <br><br>
 
-Eres mi persona favorita, mi mejor amigo y mi familia en esta tierra.
+Eres mi persona favorita,
+mi mejor amigo y mi hogar ❤️
 
 <br><br>
 
-Mi papá probablemente estaría demasiado feliz de saber que estoy con alguien que me cuida tanto como él me cuidaba ❤️
+Blacky y Lokis te aman muchísimo 🐶🐱
 
 <br><br>
 
-Estoy demasiado agradecida con la vida de haberte encontrado.
-
-<br><br>
-
-Y aunque te gusten las motos NO voy a dejar que tengas una porque honestamente me moriría si algo te pasa 😭
-
-<br><br>
-
-Amo verte emocionarte por la Formula 1 aunque yo no entienda nada 💀
-
-<br><br>
-
-Lokis oficialmente te aceptó como papá 😭
-
-<br><br>
-
-Blacky es nuestro hijo oficial y como nunca lo retas me toca hacerlo a mí JAJA.
-
-<br><br>
-
-Blacky y Lokis te aman muchísimo ❤️
-
-<br><br>
-
-Y bueno...
+Y sí...
 ya tienes 30...
-¿será que aún se le para al viejito? 💀
+¿aún rinde el viejito? 💀
 
 </div>
 
@@ -607,10 +523,10 @@ ya tienes 30...
 <img src="https://i.imgur.com/3hcy4zM.jpg">
 
 <div class="card-content">
-<h3>🐶 Blacky el salchicha oficial</h3>
+<h3>🐶 Blacky</h3>
 
 <p>
-Blacky ama demasiado a su papá Mattias ❤️
+El hijo oficial que nunca retas 😭❤️
 </p>
 
 </div>
@@ -621,10 +537,10 @@ Blacky ama demasiado a su papá Mattias ❤️
 <img src="https://i.imgur.com/fOWXh5K.jpg">
 
 <div class="card-content">
-<h3>🐱 Lokis la gata calico</h3>
+<h3>🐱 Lokis</h3>
 
 <p>
-Ahora literalmente lo adoptó como papá 😭✨
+La gata calico que oficialmente te adoptó como papá ✨
 </p>
 
 </div>
@@ -636,7 +552,7 @@ Ahora literalmente lo adoptó como papá 😭✨
 
 <section class="section">
 
-<h2>🌌 Cosas que le gustan al viejito</h2>
+<h2>🌌 Cosas que ama el viejito</h2>
 
 <div class="category-box">
 
@@ -645,7 +561,7 @@ Ahora literalmente lo adoptó como papá 😭✨
 </div>
 
 <p>
-No entiendo nada pero amo verte feliz viendo Formula 1 ❤️
+No entiendo nada pero amo verte emocionado 😭❤️
 </p>
 
 </div>
@@ -653,11 +569,11 @@ No entiendo nada pero amo verte feliz viendo Formula 1 ❤️
 <div class="category-box">
 
 <div class="category-title">
-🌙 Galaxias y astronomía
+🌙 Astronomía
 </div>
 
 <p>
-Pareces salido de otro universo ✨
+Tiene sentido que te guste el espacio porque pareces salido de otro universo ✨
 </p>
 
 </div>
@@ -669,7 +585,7 @@ Pareces salido de otro universo ✨
 </div>
 
 <p>
-Call of Duty, The Division y peleando con randoms 😭
+COD, The Division y pelear con randoms online 😭
 </p>
 
 </div>
@@ -681,8 +597,7 @@ Call of Duty, The Division y peleando con randoms 😭
 </div>
 
 <p>
-Te gustan mucho las motos...
-pero jamás voy a dejar que tengas una 😭
+Te gustan mucho pero jamás voy a dejar que tengas una 😭
 </p>
 
 </div>
@@ -696,7 +611,7 @@ pero jamás voy a dejar que tengas una 😭
 <div class="quote-grid">
 
 <div class="quote-card">
-✨ Porque me das paz incluso en mis peores días.
+✨ Porque me das paz.
 </div>
 
 <div class="quote-card">
@@ -708,57 +623,11 @@ pero jamás voy a dejar que tengas una 😭
 </div>
 
 <div class="quote-card">
-❤️ Porque siempre me haces sentir amada.
-</div>
-
-<div class="quote-card">
-🐶 Porque amas a Blacky.
-</div>
-
-<div class="quote-card">
-🐱 Porque Lokis te escogió oficialmente.
+❤️ Porque eres mi hogar.
 </div>
 
 <div class="quote-card">
 ☀️ Porque convertiste mis días en algo golden.
-</div>
-
-<div class="quote-card">
-🌌 Porque eres literalmente mi hogar.
-</div>
-
-</div>
-
-</section>
-
-<section class="section">
-
-<h2>✨ Taylor Swift coded</h2>
-
-<div class="quote-grid">
-
-<div class="quote-card">
-☀️ “I once believed love would be burning red, but it's golden.”
-</div>
-
-<div class="quote-card">
-📄 “I'd marry you with paper rings.”
-</div>
-
-<div class="quote-card">
-🌙 Desde que llegaste, mis días se sienten dorados.
-</div>
-
-<div class="quote-card">
-💖 En cualquier universo volvería a escogerte.
-</div>
-
-<div class="quote-card">
-🫶 Gracias por hacerme sentir amada todos los días.
-</div>
-
-<div class="quote-card">
-👴 Feliz cumpleaños viejito precioso.
 </div>
 
 </div>
@@ -788,15 +657,6 @@ Yo, Blacky y Lokis te amamos muchísimo 💖
 </details>
 
 <details>
-<summary>📨 ÁBREME SI NECESITAS UN ABRAZO</summary>
-
-<p>
-Quiero seguir cuidándote toda la vida 🌙
-</p>
-
-</details>
-
-<details>
 <summary>📨 ÁBREME SI AÚN RINDE EL VIEJITO</summary>
 
 <p>
@@ -806,8 +666,6 @@ Investigación científica en proceso 💀
 </details>
 
 </section>
-
-<!-- JUEGO -->
 
 <section class="section">
 
@@ -848,16 +706,11 @@ No 😎
 <p>
 Gracias por existir.
 Gracias por cuidarme.
-Gracias por amar a nuestros hijos peludos.
+Gracias por amar a nuestra mini familia ❤️
 </p>
 
 <p>
-Espero que podamos celebrar muchísimos cumpleaños más juntos ✨
-</p>
-
-<p>
-Si pudiera volver a vivir mi vida,
-volvería a escogerte siempre ❤️
+Te escogería en todos los universos ✨
 </p>
 
 </section>
@@ -875,22 +728,20 @@ Hecho con muchísimo amor para Mattias ✨🌙
 /* INTRO */
 
 function startExperience(){
-
 document.querySelector('.intro-screen').classList.add('hidden');
-
 }
 
 /* ESTRELLAS */
 
 const stars=document.querySelector('.stars');
 
-for(let i=0;i<400;i++){
+for(let i=0;i<300;i++){
 
 const star=document.createElement('div');
 
 star.classList.add('star');
 
-const size=Math.random()*4;
+const size=Math.random()*3;
 
 star.style.width=size+'px';
 star.style.height=size+'px';
@@ -916,7 +767,7 @@ heart.innerHTML=['💖','💕','💗','💘'][Math.floor(Math.random()*4)];
 
 heart.style.left=Math.random()*100+'vw';
 
-heart.style.fontSize=(Math.random()*25+15)+'px';
+heart.style.fontSize=(Math.random()*20+15)+'px';
 
 heart.style.animationDuration=(Math.random()*5+4)+'s';
 
@@ -928,29 +779,32 @@ heart.remove();
 
 }
 
-setInterval(createHeart,250);
+setInterval(createHeart,300);
 
 /* BOTON IMPOSIBLE */
 
 const yesBtn=document.getElementById("yesBtn");
 
-yesBtn.addEventListener("mouseover",()=>{
+yesBtn.addEventListener("touchstart",moveButton);
+yesBtn.addEventListener("mouseover",moveButton);
 
-yesBtn.style.top=Math.random()*80+"%";
-yesBtn.style.left=Math.random()*80+"%";
+function moveButton(){
 
-});
+yesBtn.style.top=Math.random()*70+"px";
+yesBtn.style.left=Math.random()*60+"%";
+
+}
 
 function correctAnswer(){
 
 document.getElementById("answer-box").innerHTML=`
 
-<div style="font-size:80px;">😭</div>
+<div style="font-size:70px;">😭</div>
 
 <p>
 La respuesta correcta claramente era SÍ 💀❤️
 <br><br>
-Blacky y Lokis están decepcionados de ti 🐶🐱
+Blacky y Lokis están decepcionados 🐶🐱
 </p>
 
 `;
