@@ -31,6 +31,43 @@ color:white;
 position:relative;
 }
 
+/* INTRO */
+
+.intro-screen{
+position:fixed;
+width:100%;
+height:100vh;
+background:black;
+z-index:999999;
+display:flex;
+justify-content:center;
+align-items:center;
+flex-direction:column;
+gap:20px;
+cursor:pointer;
+transition:1s;
+text-align:center;
+padding:20px;
+}
+
+.intro-screen h1{
+font-size:6rem;
+animation:pulse 2s infinite;
+}
+
+.intro-screen h2{
+font-size:2rem;
+}
+
+.intro-screen p{
+color:#d1d5db;
+}
+
+.intro-screen.hidden{
+opacity:0;
+pointer-events:none;
+}
+
 /* GALAXIA */
 
 .stars{
@@ -384,11 +421,30 @@ font-size:3rem;
 
 <body>
 
-<audio id="bgMusic" autoplay loop>
-<source src="https://files.catbox.moe/8v5m5x.mp3" type="audio/mpeg">
-</audio>
+<!-- INTRO -->
 
-<div class="music-button" onclick="toggleMusic()">
+<div class="intro-screen" onclick="startExperience()">
+
+<h1>🌌</h1>
+
+<h2>Haz click para entrar al universo de Mattias 💖</h2>
+
+<p>(con Daylight de Taylor Swift 😭✨)</p>
+
+</div>
+
+<!-- SPOTIFY -->
+
+<iframe
+src="https://open.spotify.com/embed/track/3xYJScVfxByb61dYHTwiby?utm_source=generator"
+width="0"
+height="0"
+frameBorder="0"
+allowfullscreen=""
+allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture">
+</iframe>
+
+<div class="music-button">
 🎵 Daylight
 </div>
 
@@ -740,6 +796,14 @@ Hecho con muchísimo amor para Mattias ✨🌙
 
 <script>
 
+/* INTRO */
+
+function startExperience(){
+
+document.querySelector('.intro-screen').classList.add('hidden');
+
+}
+
 /* ESTRELLAS */
 
 const stars=document.querySelector('.stars');
@@ -789,46 +853,6 @@ heart.remove();
 }
 
 setInterval(createHeart,250);
-
-/* MUSICA */
-
-const music=document.getElementById('bgMusic');
-
-music.volume=0.6;
-
-window.addEventListener('load',()=>{
-
-const playPromise=music.play();
-
-if(playPromise!==undefined){
-
-playPromise.catch(()=>{
-
-document.body.addEventListener('click',()=>{
-
-music.play();
-
-},{once:true});
-
-});
-
-}
-
-});
-
-function toggleMusic(){
-
-if(music.paused){
-
-music.play();
-
-}else{
-
-music.pause();
-
-}
-
-}
 
 </script>
 
