@@ -2,7 +2,7 @@
 <html lang="es">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Mattias 🌌💖</title>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -23,13 +23,61 @@ scroll-behavior:smooth;
 }
 
 body{
-background:
-radial-gradient(circle at top, rgba(76,29,149,.45), transparent 30%),
-radial-gradient(circle at bottom, rgba(131,24,67,.35), transparent 30%),
-linear-gradient(to bottom,#02030a,#050816,#020617,#000);
+background:#000;
 overflow-x:hidden;
-color:#f8fafc;
+color:white;
 position:relative;
+}
+
+/* FONDO GALAXIA */
+
+.space-bg{
+position:fixed;
+width:100%;
+height:100%;
+top:0;
+left:0;
+z-index:-10;
+background:
+radial-gradient(circle at top left, rgba(236,72,153,.12), transparent 25%),
+radial-gradient(circle at bottom right, rgba(168,85,247,.12), transparent 25%),
+radial-gradient(circle at center, rgba(255,255,255,.02), transparent 40%),
+#000;
+}
+
+/* ESTRELLAS */
+
+.stars{
+position:fixed;
+width:100%;
+height:100%;
+top:0;
+left:0;
+z-index:-5;
+overflow:hidden;
+}
+
+.star{
+position:absolute;
+background:white;
+border-radius:50%;
+opacity:.8;
+animation:twinkle infinite;
+box-shadow:
+0 0 6px white,
+0 0 12px rgba(255,255,255,.8),
+0 0 18px rgba(255,255,255,.5);
+}
+
+@keyframes twinkle{
+0%,100%{
+opacity:.15;
+transform:scale(.7);
+}
+50%{
+opacity:1;
+transform:scale(1.5);
+}
 }
 
 /* INTRO */
@@ -38,17 +86,21 @@ position:relative;
 position:fixed;
 width:100%;
 height:100vh;
-background:#000;
+background:black;
 z-index:999999;
 display:flex;
 justify-content:center;
 align-items:center;
 flex-direction:column;
-gap:20px;
-cursor:pointer;
-transition:1s;
 text-align:center;
 padding:30px;
+cursor:pointer;
+transition:1s;
+}
+
+.intro-screen.hidden{
+opacity:0;
+pointer-events:none;
 }
 
 .intro-screen h1{
@@ -57,85 +109,23 @@ animation:pulse 2s infinite;
 }
 
 .intro-screen h2{
-font-size:1.8rem;
-line-height:1.4;
-color:#fff;
-text-shadow:0 0 15px rgba(255,255,255,.5);
+font-size:2rem;
+color:#ff8fcb;
+margin-top:20px;
 }
 
 .intro-screen p{
-color:#cbd5e1;
-font-size:1rem;
+margin-top:15px;
+color:white;
+opacity:.8;
 }
 
-.intro-screen.hidden{
-opacity:0;
-pointer-events:none;
-}
-
-/* GALAXIA */
-
-.stars{
-position:fixed;
-width:100%;
-height:100%;
-top:0;
-left:0;
-z-index:-3;
-overflow:hidden;
-}
-
-.star{
-position:absolute;
-background:white;
-border-radius:50%;
-animation:twinkle infinite;
-opacity:.95;
-box-shadow:
-0 0 10px white,
-0 0 20px white,
-0 0 30px rgba(255,255,255,.7);
-}
-
-@keyframes twinkle{
+@keyframes pulse{
 0%,100%{
-opacity:.3;
-transform:scale(.8);
+transform:scale(1);
 }
 50%{
-opacity:1;
-transform:scale(1.6);
-}
-}
-
-.galaxy{
-position:fixed;
-width:500px;
-height:500px;
-border-radius:50%;
-filter:blur(120px);
-z-index:-5;
-animation:floatGalaxy 18s infinite alternate;
-}
-
-.g1{
-top:-150px;
-left:-150px;
-background:radial-gradient(circle,rgba(147,51,234,.28),transparent 70%);
-}
-
-.g2{
-bottom:-150px;
-right:-150px;
-background:radial-gradient(circle,rgba(236,72,153,.22),transparent 70%);
-}
-
-@keyframes floatGalaxy{
-from{
-transform:translateY(0px);
-}
-to{
-transform:translateY(40px);
+transform:scale(1.08);
 }
 }
 
@@ -144,46 +134,44 @@ transform:translateY(40px);
 .heart{
 position:fixed;
 top:-50px;
-font-size:22px;
-animation:fallHeart linear forwards;
-z-index:999;
+font-size:20px;
+animation:fall linear forwards;
 pointer-events:none;
-filter:drop-shadow(0 0 8px rgba(255,255,255,.5));
+z-index:999;
 }
 
-@keyframes fallHeart{
+@keyframes fall{
 to{
 transform:translateY(120vh) rotate(360deg);
 opacity:0;
 }
 }
 
-/* F1 */
+/* AUTOS */
 
-.f1-car{
+.f1{
 position:fixed;
 font-size:30px;
-z-index:2;
-opacity:.35;
-animation:driveRight 12s linear infinite;
-filter:drop-shadow(0 0 10px rgba(255,255,255,.3));
+opacity:.25;
+animation:drive 12s linear infinite;
+z-index:1;
 }
 
-.f1-1{
-top:18%;
+.f1.one{
+top:20%;
 }
 
-.f1-2{
-top:72%;
+.f1.two{
+top:70%;
 animation-delay:6s;
 }
 
-@keyframes driveRight{
+@keyframes drive{
 from{
-transform:translateX(-30vw);
+transform:translateX(-20vw);
 }
 to{
-transform:translateX(130vw);
+transform:translateX(120vw);
 }
 }
 
@@ -193,23 +181,23 @@ transform:translateX(130vw);
 position:fixed;
 top:15px;
 right:15px;
-background:rgba(15,23,42,.8);
-border:1px solid rgba(255,255,255,.12);
-padding:10px 16px;
+background:rgba(255,255,255,.06);
+border:1px solid rgba(255,255,255,.08);
+padding:12px 18px;
 border-radius:999px;
 backdrop-filter:blur(10px);
 z-index:9999;
+color:white;
 font-size:.9rem;
-color:#fff;
-box-shadow:0 0 15px rgba(255,255,255,.08);
 }
 
 /* CONTENIDO */
 
 .container{
-width:92%;
+width:90%;
+max-width:1000px;
 margin:auto;
-padding:30px 0;
+padding:40px 0;
 }
 
 .hero{
@@ -217,77 +205,71 @@ min-height:100vh;
 display:flex;
 justify-content:center;
 align-items:center;
-text-align:center;
 flex-direction:column;
-padding-top:80px;
+text-align:center;
 }
 
 .hero h1{
-font-size:3rem;
-font-weight:800;
-line-height:1.1;
-background:linear-gradient(to right,#ff7ac6,#ffffff,#7dd3fc);
--webkit-background-clip:text;
--webkit-text-fill-color:transparent;
+font-size:4rem;
+color:#ff8fcb;
 margin-bottom:20px;
-text-shadow:0 0 25px rgba(255,255,255,.15);
+text-shadow:0 0 20px rgba(255,143,203,.4);
 }
 
 .hero p{
-line-height:1.8;
-font-size:1rem;
-color:#e2e8f0;
-text-shadow:0 0 10px rgba(0,0,0,.8);
+font-size:1.1rem;
+line-height:2;
+max-width:800px;
+color:white;
 }
 
 .badges{
 display:flex;
-gap:10px;
+gap:12px;
 flex-wrap:wrap;
 justify-content:center;
-margin-top:30px;
+margin-top:35px;
 }
 
 .badge{
-background:rgba(15,23,42,.75);
+background:rgba(255,255,255,.06);
 border:1px solid rgba(255,255,255,.08);
-padding:10px 16px;
+padding:10px 18px;
 border-radius:999px;
-backdrop-filter:blur(10px);
-font-size:.8rem;
-color:#fff;
+color:white;
+font-size:.9rem;
 }
 
+/* SECCIONES */
+
 .section{
-margin-top:90px;
+margin-top:100px;
 }
 
 .section h2{
 text-align:center;
-font-size:2rem;
-margin-bottom:35px;
-color:#ffb7dd;
-line-height:1.3;
-text-shadow:0 0 12px rgba(255,183,221,.3);
+font-size:2.4rem;
+margin-bottom:40px;
+color:#ff8fcb;
+text-shadow:0 0 15px rgba(255,143,203,.4);
 }
 
 .box,
-.category-box,
+.card,
 .quote-card,
-.love-game,
-details{
-background:rgba(15,23,42,.78);
+.category-box,
+details,
+.love-game{
+background:rgba(255,255,255,.04);
 border:1px solid rgba(255,255,255,.08);
+border-radius:30px;
 padding:25px;
-border-radius:28px;
-backdrop-filter:blur(18px);
+backdrop-filter:blur(10px);
+color:white;
 line-height:1.9;
-font-size:.98rem;
-color:#f8fafc;
-box-shadow:
-0 0 20px rgba(0,0,0,.4),
-0 0 30px rgba(255,255,255,.03);
 }
+
+/* GALERIA */
 
 .gallery{
 display:flex;
@@ -296,39 +278,38 @@ gap:25px;
 }
 
 .card{
-background:rgba(15,23,42,.82);
-border-radius:28px;
 overflow:hidden;
-backdrop-filter:blur(12px);
-border:1px solid rgba(255,255,255,.08);
-box-shadow:0 0 25px rgba(0,0,0,.4);
+padding:0;
 }
 
 .card img{
 width:100%;
-height:340px;
+height:350px;
 object-fit:cover;
 }
 
 .card-content{
-padding:20px;
+padding:25px;
 }
 
 .card-content h3{
-margin-bottom:12px;
-color:#ffb3de;
-font-size:1.2rem;
+color:#ff8fcb;
+margin-bottom:10px;
 }
 
-.card-content p{
-color:#f1f5f9;
-}
+/* QUOTES */
 
 .quote-grid{
 display:flex;
 flex-direction:column;
 gap:20px;
 }
+
+.quote-card{
+font-size:1rem;
+}
+
+/* CATEGORY */
 
 .category-box{
 margin-bottom:20px;
@@ -337,33 +318,39 @@ margin-bottom:20px;
 .category-title{
 font-size:1.4rem;
 margin-bottom:15px;
-color:#ffb3de;
+color:#ff8fcb;
+}
+
+/* CARTAS */
+
+details{
+margin-bottom:20px;
+cursor:pointer;
 }
 
 summary{
-font-size:1rem;
+color:#ff8fcb;
 font-weight:700;
-color:#ffb3de;
+font-size:1rem;
 }
 
 details p{
 margin-top:15px;
-color:#f8fafc;
 }
 
-/* JUEGO */
+/* LOVE GAME */
 
 .love-game{
 text-align:center;
 position:relative;
 overflow:hidden;
-min-height:260px;
+min-height:250px;
 }
 
 .love-game h3{
 font-size:1.5rem;
-margin-bottom:35px;
-color:#ffb3de;
+color:#ff8fcb;
+margin-bottom:30px;
 }
 
 .buttons{
@@ -377,9 +364,8 @@ padding:16px 28px;
 border-radius:999px;
 font-size:1rem;
 font-weight:700;
-cursor:pointer;
 position:absolute;
-box-shadow:0 0 20px rgba(0,0,0,.4);
+cursor:pointer;
 }
 
 .yes-btn{
@@ -397,32 +383,28 @@ top:20px;
 }
 
 #answer-box{
-margin-top:35px;
+margin-top:30px;
 font-size:1.1rem;
 line-height:1.8;
-min-height:90px;
-color:#fff;
 }
 
 /* FINAL */
 
 .final{
 text-align:center;
-padding:80px 10px;
+padding:80px 0;
 }
 
 .final h2{
-font-size:2.5rem;
+font-size:3rem;
+color:#ff8fcb;
 margin-bottom:25px;
-color:#ffb3de;
-text-shadow:0 0 15px rgba(255,179,222,.25);
 }
 
 .final p{
 line-height:2;
-font-size:1rem;
-color:#f1f5f9;
 margin-bottom:18px;
+color:white;
 }
 
 .big-love{
@@ -430,29 +412,46 @@ font-size:4rem;
 text-align:center;
 margin-top:60px;
 animation:pulse 2s infinite;
-filter:drop-shadow(0 0 15px rgba(255,255,255,.3));
-}
-
-@keyframes pulse{
-0%,100%{
-transform:scale(1);
-}
-50%{
-transform:scale(1.08);
-}
 }
 
 footer{
 text-align:center;
 padding:50px 20px;
-color:#cbd5e1;
+color:white;
+opacity:.6;
 font-size:.9rem;
+}
+
+/* MOBILE */
+
+@media(max-width:768px){
+
+.hero h1{
+font-size:2.8rem;
+}
+
+.section h2{
+font-size:2rem;
+}
+
+.final h2{
+font-size:2.3rem;
+}
+
+.card img{
+height:300px;
+}
+
 }
 
 </style>
 </head>
 
 <body>
+
+<div class="space-bg"></div>
+
+<div class="stars"></div>
 
 <div class="intro-screen" onclick="startExperience()">
 
@@ -468,22 +467,16 @@ font-size:.9rem;
 src="https://open.spotify.com/embed/track/3xYJScVfxByb61dYHTwiby?utm_source=generator"
 width="0"
 height="0"
-frameBorder="0"
-allowfullscreen=""
-allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture">
+frameborder="0"
+allow="autoplay">
 </iframe>
 
 <div class="music-button">
 🎵 Daylight
 </div>
 
-<div class="stars"></div>
-
-<div class="galaxy g1"></div>
-<div class="galaxy g2"></div>
-
-<div class="f1-car f1-1">🏎️</div>
-<div class="f1-car f1-2">🏎️</div>
+<div class="f1 one">🏎️</div>
+<div class="f1 two">🏎️</div>
 
 <div class="container">
 
@@ -495,13 +488,13 @@ allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-pictur
 
 <p>
 Pero sigues siendo el hombre más lindo,
-paciente y especial del universo entero ✨
+paciente, amoroso y especial del universo entero ✨
 </p>
 
 <div class="badges">
 <div class="badge">🏎️ Formula 1 lover</div>
 <div class="badge">🌙 Astronomy boy</div>
-<div class="badge">🎮 Gamer</div>
+<div class="badge">🎮 Shooter gamer</div>
 <div class="badge">👴 Viejito oficial</div>
 <div class="badge">🐶 Papá de Blacky</div>
 <div class="badge">🐱 Papá de Lokis</div>
@@ -552,6 +545,7 @@ ya tienes 30...
 <img src="https://i.imgur.com/3hcy4zM.jpg">
 
 <div class="card-content">
+
 <h3>🐶 Blacky</h3>
 
 <p>
@@ -559,6 +553,7 @@ El hijo oficial que nunca retas 😭❤️
 </p>
 
 </div>
+
 </div>
 
 <div class="card">
@@ -566,6 +561,7 @@ El hijo oficial que nunca retas 😭❤️
 <img src="https://i.imgur.com/fOWXh5K.jpg">
 
 <div class="card-content">
+
 <h3>🐱 Lokis</h3>
 
 <p>
@@ -573,6 +569,7 @@ La gata calico que oficialmente te adoptó como papá ✨
 </p>
 
 </div>
+
 </div>
 
 </div>
@@ -639,11 +636,25 @@ Te gustan mucho pero jamás voy a dejar que tengas una 😭
 
 <div class="quote-grid">
 
-<div class="quote-card">✨ Porque me das paz.</div>
-<div class="quote-card">🫶 Porque siempre me escuchas.</div>
-<div class="quote-card">🌙 Porque contigo me siento segura.</div>
-<div class="quote-card">❤️ Porque eres mi hogar.</div>
-<div class="quote-card">☀️ Porque convertiste mis días en algo golden.</div>
+<div class="quote-card">
+✨ Porque me das paz.
+</div>
+
+<div class="quote-card">
+🫶 Porque siempre me escuchas.
+</div>
+
+<div class="quote-card">
+🌙 Porque contigo me siento segura.
+</div>
+
+<div class="quote-card">
+❤️ Porque eres mi hogar.
+</div>
+
+<div class="quote-card">
+☀️ Porque convertiste mis días en algo golden.
+</div>
 
 </div>
 
@@ -655,17 +666,29 @@ Te gustan mucho pero jamás voy a dejar que tengas una 😭
 
 <details>
 <summary>📨 ÁBREME SI TE SIENTES VIEJITO</summary>
-<p>Sí, ya tienes 30 😭❤️</p>
+
+<p>
+Sí, ya tienes 30 😭❤️
+</p>
+
 </details>
 
 <details>
 <summary>📨 ÁBREME SI NECESITAS RECORDAR QUE TE AMAMOS</summary>
-<p>Yo, Blacky y Lokis te amamos muchísimo 💖</p>
+
+<p>
+Yo, Blacky y Lokis te amamos muchísimo 💖
+</p>
+
 </details>
 
 <details>
 <summary>📨 ÁBREME SI AÚN RINDE EL VIEJITO</summary>
-<p>Investigación científica en proceso 💀</p>
+
+<p>
+Investigación científica en proceso 💀
+</p>
+
 </details>
 
 </section>
@@ -728,6 +751,8 @@ Hecho con muchísimo amor para Mattias ✨🌙
 
 <script>
 
+/* INTRO */
+
 function startExperience(){
 document.querySelector('.intro-screen').classList.add('hidden');
 }
@@ -736,7 +761,7 @@ document.querySelector('.intro-screen').classList.add('hidden');
 
 const stars=document.querySelector('.stars');
 
-for(let i=0;i<300;i++){
+for(let i=0;i<350;i++){
 
 const star=document.createElement('div');
 
@@ -750,7 +775,7 @@ star.style.height=size+'px';
 star.style.left=Math.random()*100+'vw';
 star.style.top=Math.random()*100+'vh';
 
-star.style.animationDuration=(Math.random()*3+2)+'s';
+star.style.animationDuration=(Math.random()*4+2)+'s';
 
 stars.appendChild(star);
 
@@ -786,8 +811,8 @@ setInterval(createHeart,300);
 
 const yesBtn=document.getElementById("yesBtn");
 
-yesBtn.addEventListener("touchstart",moveButton);
 yesBtn.addEventListener("mouseover",moveButton);
+yesBtn.addEventListener("touchstart",moveButton);
 
 function moveButton(){
 
