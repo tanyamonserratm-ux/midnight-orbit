@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mattias ✨</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, sans-serif;
+    }
+
+    body {
+      background: linear-gradient(to bottom, #050816, #0f172a, black);
+      color: white;
+      overflow-x: hidden;
+    }
+
+    .stars {
+      position: fixed;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+      overflow: hidden;
+    }
+
+    .star {
+      position: absolute;
+      width: 2px;
+      height: 2px;
+      background: white;
+      border-radius: 50%;
+      animation: twinkle 3s infinite;
+    }
+
+    @keyframes twinkle {
+      0%,100% { opacity: 0.2; }
+      50% { opacity: 1; }
+    }
+
+    .heart {
+      position: fixed;
+      color: pink;
+      animation: float 6s linear infinite;
+      opacity: 0.7;
+      z-index: 999;
+    }
+
+    @keyframes float {
+      from {
+        transform: translateY(100vh);
+      }
+      to {
+        transform: translateY(-120vh);
+      }
+    }
+
+    .container {
+      width: 90%;
+      max-width: 1100px;
+      margin: auto;
+      padding: 40px 0;
+    }
+
+    .hero {
+      text-align: center;
+      padding: 80px 0;
+    }
+
+    .hero h1 {
+      font-size: 5rem;
+      background: linear-gradient(to right, pink, white, lightblue);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      margin-bottom: 20px;
+    }
+
+    .hero p {
+      color: #d1d5db;
+      font-size: 1.3rem;
+      line-height: 1.7;
+    }
+
+    .badges {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 15px;
+      margin-top: 40px;
+    }
+
+    .badge {
+      background: rgba(255,255,255,0.1);
+      padding: 15px 25px;
+      border-radius: 999px;
+      backdrop-filter: blur(10px);
+    }
+
+    .section {
+      margin-top: 100px;
+    }
+
+    .section h2 {
+      text-align: center;
+      margin-bottom: 40px;
+      font-size: 3rem;
+      color: pink;
+    }
+
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 30px;
+    }
+
+    .card {
+      background: rgba(255,255,255,0.05);
+      border-radius: 30px;
+      overflow: hidden;
+      backdrop-filter: blur(10px);
+      transition: 0.4s;
+    }
+
+    .card:hover {
+      transform: scale(1.02);
+    }
+
+    .card img {
+      width: 100%;
+      height: 450px;
+      object-fit: cover;
+    }
+
+    .card-content {
+      padding: 25px;
+    }
+
+    .card-content h3 {
+      color: pink;
+      margin-bottom: 10px;
+    }
+
+    .love-box {
+      background: rgba(255,255,255,0.05);
+      padding: 40px;
+      border-radius: 40px;
+      line-height: 1.8;
+      font-size: 1.2rem;
+    }
+
+    details {
+      background: rgba(255,255,255,0.05);
+      padding: 20px;
+      border-radius: 25px;
+      margin-bottom: 20px;
+      cursor: pointer;
+    }
+
+    summary {
+      font-size: 1.2rem;
+      font-weight: bold;
+      color: pink;
+    }
+
+    details p {
+      margin-top: 20px;
+      line-height: 1.8;
+      color: #d1d5db;
+    }
+
+    .final {
+      text-align: center;
+      padding: 80px 30px;
+      background: rgba(255,255,255,0.05);
+      border-radius: 40px;
+      margin-top: 100px;
+    }
+
+    .final h2 {
+      font-size: 4rem;
+      margin-bottom: 30px;
+      color: pink;
+    }
+
+    .final p {
+      line-height: 1.8;
+      color: #d1d5db;
+      font-size: 1.2rem;
+      margin-bottom: 20px;
+    }
+
+    .music {
+      text-align: center;
+      margin-top: 50px;
+      color: gray;
+    }
+
+    @media(max-width: 768px){
+      .hero h1 {
+        font-size: 3rem;
+      }
+
+      .final h2 {
+        font-size: 2.5rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<div class="stars"></div>
+
+<div class="container">
+
+  <section class="hero">
+    <p>✨ Feliz cumpleaños Mattias ✨</p>
+    <h1>LOS 30 TE PEGARON</h1>
+
+    <p>
+      Pero sigues siendo el hombre más hermoso, paciente,
+      amoroso y especial del universo 🌌
+    </p>
+
+    <div class="badges">
+      <div class="badge">🏎️ Fan de F1</div>
+      <div class="badge">🌙 Astronomía lover</div>
+      <div class="badge">🎮 Shooter gamer</div>
+      <div class="badge">👴 Anciano oficialmente</div>
+    </div>
+  </section>
+
+  <section class="section">
+    <h2>Gracias por todo ❤️</h2>
+
+    <div class="love-box">
+      Gracias por siempre estar conmigo, por aguantarme,
+      por cuidarme, abrazarme y hacerme sentir segura contigo.
+      <br><br>
+      Amo que seas respetuoso, atento, comprensivo,
+      paciente, amoroso y tierno.
+      <br><br>
+      Amo cómo tratas a Blacky y Lokis,
+      y cómo haces que todos se sientan queridos.
+      <br><br>
+      Honestamente estoy demasiado feliz de haberte conocido.
+      Espero que cumplas muchísimos años más conmigo.
+      Ya todos queremos vivir contigo 😭✨
+    </div>
+  </section>
+
+  <section class="section">
+    <h2>Nuestra mini familia 💖</h2>
+
+    <div class="gallery">
+      <div class="card">
+        <img src="https://i.imgur.com/q4xQq7T.jpeg">
+        <div class="card-content">
+          <h3>Blacky cuidando al viejito</h3>
+          <p>
+            Blacky supervisando que Mattias siga respirando
+            mientras duerme como abuelo de 30 años 💀
+          </p>
+        </div>
+      </div>
+
+      <div class="card">
+        <img src="https://i.imgur.com/Y0tF5mM.jpeg">
+        <div class="card-content">
+          <h3>Lokis siendo reina</h3>
+          <p>
+            Lokis aprobando oficialmente a su humano favorito 🐱✨
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <h2>🐶🐱 Opiniones oficiales</h2>
+
+    <details>
+      <summary>🐶 Relatorio de Blacky</summary>
+      <p>
+        “Mi humano favorito me carga, me da cariño y me deja dormir con él aunque ocupe toda la cama. A veces ronca fuerte pero lo perdono porque me ama muchísimo.”
+      </p>
+    </details>
+
+    <details>
+      <summary>🐱 Relatorio de Lokis</summary>
+      <p>
+        “Como gata calico oficialmente complicada, apruebo a Mattias. Respeta mi autoridad y acepta que yo mande sobre todos.”
+      </p>
+    </details>
+  </section>
+
+  <section class="section">
+    <h2>Cartas espaciales 🚀</h2>
+
+    <details>
+      <summary>📨 ÁBREME SI YA TE SIENTES VIEJITO</summary>
+      <p>
+        Felices 30 viejito 😭💖 Aunque ya hagas sonidos al levantarte de la cama, sigues siendo el niño más lindo del mundo para mí.
+      </p>
+    </details>
+
+    <details>
+      <summary>📨 ÁBREME SI NECESITAS RECORDAR QUE TE AMAMOS</summary>
+      <p>
+        Yo, Blacky y Lokis te amamos muchísimo. Gracias por tratarnos tan bien y cuidar siempre de nosotros.
+      </p>
+    </details>
+
+    <details>
+      <summary>📨 ÁBREME SI AÚN SE TE PARA</summary>
+      <p>
+        Esta sección científica era completamente necesaria JAJAJA 💀❤️
+      </p>
+    </details>
+  </section>
+
+  <section class="final">
+    <h2>Feliz cumpleaños mi amor ❤️</h2>
+
+    <p>
+      Perdón por no enviarte algo físico 😭
+      No sabía la dirección de la nueva casa,
+      pero quería hacerte algo especial que pudieras guardar siempre.
+    </p>
+
+    <p>
+      Gracias por existir.
+      Gracias por amarme.
+      Gracias por cuidar de nosotros.
+    </p>
+
+    <p>
+      Te amo muchísimo Mattias 🌙✨
+    </p>
+  </section>
+
+  <div class="music">
+    🎵 Daylight — Taylor Swift 🎵
+  </div>
+
+</div>
+
+<script>
+  const stars = document.querySelector('.stars');
+
+  for(let i=0;i<120;i++){
+    const star = document.createElement('div');
+    star.classList.add('star');
+    star.style.top = Math.random()*100 + '%';
+    star.style.left = Math.random()*100 + '%';
+    star.style.animationDuration = (Math.random()*3+2)+'s';
+    stars.appendChild(star);
+  }
+
+  function createHeart(){
+    const heart = document.createElement('div');
+    heart.classList.add('heart');
+    heart.innerHTML = '❤️';
+    heart.style.left = Math.random()*100 + 'vw';
+    heart.style.fontSize = (Math.random()*20+10)+'px';
+    document.body.appendChild(heart);
+
+    setTimeout(()=>{
+      heart.remove();
+    },6000);
+  }
+
+  setInterval(createHeart, 300);
+</script>
+
+</body>
+</html>
