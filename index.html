@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Mattias 💖</title>
+<title>Mattias 🌌💖</title>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800&display=swap" rel="stylesheet">
@@ -358,6 +358,63 @@ line-height:1.9;
 color:#d1d5db;
 }
 
+/* JUEGO */
+
+.love-game{
+background:rgba(255,255,255,.05);
+padding:50px;
+border-radius:35px;
+text-align:center;
+backdrop-filter:blur(12px);
+}
+
+.love-game h3{
+font-size:2rem;
+margin-bottom:40px;
+color:#ffb3de;
+}
+
+.buttons{
+display:flex;
+justify-content:center;
+gap:20px;
+flex-wrap:wrap;
+}
+
+.buttons button{
+border:none;
+padding:18px 35px;
+border-radius:999px;
+font-size:1.1rem;
+cursor:pointer;
+transition:.3s;
+font-weight:700;
+}
+
+.yes-btn{
+background:#ff5ca8;
+color:white;
+position:relative;
+}
+
+.no-btn{
+background:#111827;
+color:white;
+}
+
+.buttons button:hover{
+transform:scale(1.08);
+}
+
+#answer-box{
+margin-top:40px;
+font-size:1.4rem;
+line-height:2;
+min-height:100px;
+}
+
+/* FINAL */
+
 .final{
 text-align:center;
 padding:100px 30px;
@@ -421,8 +478,6 @@ font-size:3rem;
 
 <body>
 
-<!-- INTRO -->
-
 <div class="intro-screen" onclick="startExperience()">
 
 <h1>🌌</h1>
@@ -432,8 +487,6 @@ font-size:3rem;
 <p>(con Daylight de Taylor Swift 😭✨)</p>
 
 </div>
-
-<!-- SPOTIFY -->
 
 <iframe
 src="https://open.spotify.com/embed/track/3xYJScVfxByb61dYHTwiby?utm_source=generator"
@@ -465,8 +518,8 @@ allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-pictur
 <h1>LOS 30 TE PEGARON</h1>
 
 <p>
-Pero sigues siendo el hombre más lindo, paciente,
-amoroso y especial del universo entero ✨
+Pero sigues siendo el hombre más lindo,
+paciente, amoroso y especial del universo entero ✨
 </p>
 
 <div class="badges">
@@ -507,17 +560,16 @@ Estoy demasiado agradecida con la vida de haberte encontrado.
 
 <br><br>
 
-Y aunque te gusten las motos NO voy a dejar que tengas una porque honestamente me moriría si algo te pasa 😭 puedes mirarlas nomás JAJA.
+Y aunque te gusten las motos NO voy a dejar que tengas una porque honestamente me moriría si algo te pasa 😭
 
 <br><br>
 
 Amo verte emocionarte por la Formula 1 aunque yo no entienda nada 💀
 pero si tú eres feliz viendo autos dar vueltas entonces yo feliz también.
-Es un deporte con che copete 🏎️
 
 <br><br>
 
-Lokis oficialmente te aceptó como papá aunque al principio ni la pescabas mucho 😭 y ahora es literalmente tu hija.
+Lokis oficialmente te aceptó como papá aunque al principio ni la pescabas mucho 😭
 
 <br><br>
 
@@ -525,18 +577,13 @@ Blacky es nuestro hijo oficial y como nunca lo retas me toca hacerlo a mí JAJA.
 
 <br><br>
 
-Blacky y Lokis te aman muchísimo y siempre se ponen felices cuando te ven ❤️
-
-<br><br>
-
-No esperamos el día de vivir todos juntos 🌙✨
+Blacky y Lokis te aman muchísimo ❤️
 
 <br><br>
 
 Y bueno...
 ya tienes 30...
-¿será que aún se le para al viejito?
-¿o habrá que comprar viagra? 💀
+¿será que aún se le para al viejito? 💀
 
 </div>
 
@@ -544,219 +591,29 @@ ya tienes 30...
 
 <section class="section">
 
-<h2>📸 Nuestra mini familia</h2>
+<h2>❓ Pregunta MUY importante ❓</h2>
 
-<div class="gallery">
+<div class="love-game">
 
-<div class="card">
+<h3>
+Mattias... me amas? 🥺
+</h3>
 
-<img src="https://i.imgur.com/3hcy4zM.jpg">
+<div class="buttons">
 
-<div class="card-content">
-<h3>🐶 Blacky el salchicha oficial</h3>
+<button class="yes-btn" id="yesBtn">
+Sí 💖
+</button>
 
-<p>
-Blacky ama demasiado a su papá Mattias.
-Nunca lo reta así que claramente el villano de la familia soy yo 💀❤️
-</p>
-
-</div>
-</div>
-
-<div class="card">
-
-<img src="https://i.imgur.com/fOWXh5K.jpg">
-
-<div class="card-content">
-<h3>🐱 Lokis la gata calico</h3>
-
-<p>
-Al principio ni lo pescaba mucho...
-y ahora literalmente lo adoptó como papá 😭✨
-</p>
-
-</div>
-</div>
+<button class="no-btn" onclick="correctAnswer()">
+No 😎
+</button>
 
 </div>
 
-</section>
-
-<section class="section">
-
-<h2>🌌 Cosas que le gustan al viejito</h2>
-
-<div class="category-box">
-
-<div class="category-title">
-🏎️ Formula 1
-</div>
-
-<p>
-No entiendo nada pero amo verte feliz viendo Formula 1 durante horas JAJA ❤️
-</p>
+<div id="answer-box"></div>
 
 </div>
-
-<div class="category-box">
-
-<div class="category-title">
-🌙 Galaxias y astronomía
-</div>
-
-<p>
-Tiene demasiado sentido que te guste el espacio porque honestamente pareces salido de otro universo ✨
-</p>
-
-</div>
-
-<div class="category-box">
-
-<div class="category-title">
-🎮 Shooter games
-</div>
-
-<p>
-Call of Duty, The Division y probablemente peleando con randoms online 😭
-</p>
-
-</div>
-
-<div class="category-box">
-
-<div class="category-title">
-🏍️ Motos
-</div>
-
-<p>
-Sí, te gustan mucho las motos...
-pero jamás voy a dejar que tengas una porque NO pienso dejar que te mueras 😭
-</p>
-
-</div>
-
-</section>
-
-<section class="section">
-
-<h2>💖 Motivos por los que te elegí</h2>
-
-<div class="quote-grid">
-
-<div class="quote-card">
-✨ Porque me das paz incluso en mis peores días.
-</div>
-
-<div class="quote-card">
-🫶 Porque siempre me escuchas aunque reclame todo el día.
-</div>
-
-<div class="quote-card">
-🌙 Porque contigo me siento segura.
-</div>
-
-<div class="quote-card">
-❤️ Porque siempre me haces sentir amada.
-</div>
-
-<div class="quote-card">
-🐶 Porque amas a Blacky como si fuera tu hijo.
-</div>
-
-<div class="quote-card">
-🐱 Porque Lokis te escogió oficialmente como papá.
-</div>
-
-<div class="quote-card">
-☀️ Porque convertiste mis días en algo golden.
-</div>
-
-<div class="quote-card">
-🌌 Porque eres literalmente mi hogar.
-</div>
-
-</div>
-
-</section>
-
-<section class="section">
-
-<h2>✨ Taylor Swift coded</h2>
-
-<div class="quote-grid">
-
-<div class="quote-card">
-☀️ “I once believed love would be burning red, but it's golden.”
-</div>
-
-<div class="quote-card">
-📄 “I'd marry you with paper rings.”
-</div>
-
-<div class="quote-card">
-🌙 Desde que llegaste, mis días se sienten dorados.
-</div>
-
-<div class="quote-card">
-💖 En cualquier universo volvería a escogerte.
-</div>
-
-<div class="quote-card">
-🫶 Gracias por hacerme sentir amada todos los días.
-</div>
-
-<div class="quote-card">
-👴 Feliz cumpleaños viejito precioso.
-</div>
-
-</div>
-
-</section>
-
-<section class="section">
-
-<h2>📨 Cartas espaciales</h2>
-
-<details>
-<summary>📨 ÁBREME SI TE SIENTES VIEJITO</summary>
-
-<p>
-Sí, ya tienes 30.
-Sí, haces sonidos al levantarte.
-Sí, probablemente tu espalda duele.
-Pero sigues siendo el niño más lindo del universo para mí 😭❤️
-</p>
-
-</details>
-
-<details>
-<summary>📨 ÁBREME SI NECESITAS RECORDAR QUE TE AMAMOS</summary>
-
-<p>
-Yo, Blacky y Lokis te amamos muchísimo.
-Gracias por tratarnos tan bonito siempre 💖
-</p>
-
-</details>
-
-<details>
-<summary>📨 ÁBREME SI NECESITAS UN ABRAZO</summary>
-
-<p>
-Ojalá pudiera abrazarte cada vez que te sientes cansado o triste.
-Quiero seguir cuidándote toda la vida 🌙
-</p>
-
-</details>
-
-<details>
-<summary>📨 ÁBREME SI AÚN RINDE EL VIEJITO</summary>
-
-<p>
-Esta investigación científica sigue en proceso 💀
-</p>
-
-</details>
 
 </section>
 
@@ -853,6 +710,36 @@ heart.remove();
 }
 
 setInterval(createHeart,250);
+
+/* JUEGO */
+
+const yesBtn=document.getElementById("yesBtn");
+
+yesBtn.addEventListener("mouseover",()=>{
+
+yesBtn.style.position="absolute";
+
+yesBtn.style.top=Math.random()*80+"%";
+
+yesBtn.style.left=Math.random()*80+"%";
+
+});
+
+function correctAnswer(){
+
+document.getElementById("answer-box").innerHTML=`
+
+<div style="font-size:80px;">😭</div>
+
+<p>
+La respuesta correcta claramente era SÍ 💀❤️
+<br><br>
+Blacky y Lokis están decepcionados de ti 🐶🐱
+</p>
+
+`;
+
+}
 
 </script>
 
