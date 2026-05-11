@@ -24,11 +24,11 @@ scroll-behavior:smooth;
 
 body{
 background:
-radial-gradient(circle at top, rgba(139,92,246,.35), transparent 30%),
-radial-gradient(circle at bottom, rgba(236,72,153,.25), transparent 30%),
-linear-gradient(to bottom,#050816,#0f172a,#000);
+radial-gradient(circle at top, rgba(76,29,149,.45), transparent 30%),
+radial-gradient(circle at bottom, rgba(131,24,67,.35), transparent 30%),
+linear-gradient(to bottom,#02030a,#050816,#020617,#000);
 overflow-x:hidden;
-color:white;
+color:#f8fafc;
 position:relative;
 }
 
@@ -38,7 +38,7 @@ position:relative;
 position:fixed;
 width:100%;
 height:100vh;
-background:black;
+background:#000;
 z-index:999999;
 display:flex;
 justify-content:center;
@@ -59,10 +59,12 @@ animation:pulse 2s infinite;
 .intro-screen h2{
 font-size:1.8rem;
 line-height:1.4;
+color:#fff;
+text-shadow:0 0 15px rgba(255,255,255,.5);
 }
 
 .intro-screen p{
-color:#d1d5db;
+color:#cbd5e1;
 font-size:1rem;
 }
 
@@ -88,18 +90,21 @@ position:absolute;
 background:white;
 border-radius:50%;
 animation:twinkle infinite;
-opacity:.9;
-box-shadow:0 0 18px white;
+opacity:.95;
+box-shadow:
+0 0 10px white,
+0 0 20px white,
+0 0 30px rgba(255,255,255,.7);
 }
 
 @keyframes twinkle{
 0%,100%{
-opacity:.2;
+opacity:.3;
 transform:scale(.8);
 }
 50%{
 opacity:1;
-transform:scale(1.5);
+transform:scale(1.6);
 }
 }
 
@@ -108,21 +113,21 @@ position:fixed;
 width:500px;
 height:500px;
 border-radius:50%;
-filter:blur(90px);
+filter:blur(120px);
 z-index:-5;
-animation:floatGalaxy 15s infinite alternate;
+animation:floatGalaxy 18s infinite alternate;
 }
 
 .g1{
 top:-150px;
 left:-150px;
-background:radial-gradient(circle,rgba(168,85,247,.3),transparent 70%);
+background:radial-gradient(circle,rgba(147,51,234,.28),transparent 70%);
 }
 
 .g2{
 bottom:-150px;
 right:-150px;
-background:radial-gradient(circle,rgba(236,72,153,.25),transparent 70%);
+background:radial-gradient(circle,rgba(236,72,153,.22),transparent 70%);
 }
 
 @keyframes floatGalaxy{
@@ -143,6 +148,7 @@ font-size:22px;
 animation:fallHeart linear forwards;
 z-index:999;
 pointer-events:none;
+filter:drop-shadow(0 0 8px rgba(255,255,255,.5));
 }
 
 @keyframes fallHeart{
@@ -158,8 +164,9 @@ opacity:0;
 position:fixed;
 font-size:30px;
 z-index:2;
-opacity:.5;
+opacity:.35;
 animation:driveRight 12s linear infinite;
+filter:drop-shadow(0 0 10px rgba(255,255,255,.3));
 }
 
 .f1-1{
@@ -186,12 +193,15 @@ transform:translateX(130vw);
 position:fixed;
 top:15px;
 right:15px;
-background:rgba(255,255,255,.1);
+background:rgba(15,23,42,.8);
+border:1px solid rgba(255,255,255,.12);
 padding:10px 16px;
 border-radius:999px;
 backdrop-filter:blur(10px);
 z-index:9999;
 font-size:.9rem;
+color:#fff;
+box-shadow:0 0 15px rgba(255,255,255,.08);
 }
 
 /* CONTENIDO */
@@ -216,16 +226,18 @@ padding-top:80px;
 font-size:3rem;
 font-weight:800;
 line-height:1.1;
-background:linear-gradient(to right,#ff7ac6,#fff,#7dd3fc);
+background:linear-gradient(to right,#ff7ac6,#ffffff,#7dd3fc);
 -webkit-background-clip:text;
 -webkit-text-fill-color:transparent;
 margin-bottom:20px;
+text-shadow:0 0 25px rgba(255,255,255,.15);
 }
 
 .hero p{
 line-height:1.8;
 font-size:1rem;
-color:#d1d5db;
+color:#e2e8f0;
+text-shadow:0 0 10px rgba(0,0,0,.8);
 }
 
 .badges{
@@ -237,11 +249,13 @@ margin-top:30px;
 }
 
 .badge{
-background:rgba(255,255,255,.08);
+background:rgba(15,23,42,.75);
+border:1px solid rgba(255,255,255,.08);
 padding:10px 16px;
 border-radius:999px;
 backdrop-filter:blur(10px);
 font-size:.8rem;
+color:#fff;
 }
 
 .section{
@@ -252,8 +266,9 @@ margin-top:90px;
 text-align:center;
 font-size:2rem;
 margin-bottom:35px;
-color:#ff9ed6;
+color:#ffb7dd;
 line-height:1.3;
+text-shadow:0 0 12px rgba(255,183,221,.3);
 }
 
 .box,
@@ -261,14 +276,17 @@ line-height:1.3;
 .quote-card,
 .love-game,
 details{
-background:rgba(255,255,255,.06);
+background:rgba(15,23,42,.78);
 border:1px solid rgba(255,255,255,.08);
 padding:25px;
 border-radius:28px;
-backdrop-filter:blur(12px);
+backdrop-filter:blur(18px);
 line-height:1.9;
 font-size:.98rem;
-color:#e5e7eb;
+color:#f8fafc;
+box-shadow:
+0 0 20px rgba(0,0,0,.4),
+0 0 30px rgba(255,255,255,.03);
 }
 
 .gallery{
@@ -278,10 +296,12 @@ gap:25px;
 }
 
 .card{
-background:rgba(255,255,255,.06);
+background:rgba(15,23,42,.82);
 border-radius:28px;
 overflow:hidden;
 backdrop-filter:blur(12px);
+border:1px solid rgba(255,255,255,.08);
+box-shadow:0 0 25px rgba(0,0,0,.4);
 }
 
 .card img{
@@ -298,6 +318,10 @@ padding:20px;
 margin-bottom:12px;
 color:#ffb3de;
 font-size:1.2rem;
+}
+
+.card-content p{
+color:#f1f5f9;
 }
 
 .quote-grid{
@@ -319,11 +343,12 @@ color:#ffb3de;
 summary{
 font-size:1rem;
 font-weight:700;
-color:#ff9ed6;
+color:#ffb3de;
 }
 
 details p{
 margin-top:15px;
+color:#f8fafc;
 }
 
 /* JUEGO */
@@ -354,10 +379,11 @@ font-size:1rem;
 font-weight:700;
 cursor:pointer;
 position:absolute;
+box-shadow:0 0 20px rgba(0,0,0,.4);
 }
 
 .yes-btn{
-background:#ff5ca8;
+background:#ec4899;
 color:white;
 left:10%;
 top:20px;
@@ -375,6 +401,7 @@ margin-top:35px;
 font-size:1.1rem;
 line-height:1.8;
 min-height:90px;
+color:#fff;
 }
 
 /* FINAL */
@@ -388,12 +415,13 @@ padding:80px 10px;
 font-size:2.5rem;
 margin-bottom:25px;
 color:#ffb3de;
+text-shadow:0 0 15px rgba(255,179,222,.25);
 }
 
 .final p{
 line-height:2;
 font-size:1rem;
-color:#d1d5db;
+color:#f1f5f9;
 margin-bottom:18px;
 }
 
@@ -402,6 +430,7 @@ font-size:4rem;
 text-align:center;
 margin-top:60px;
 animation:pulse 2s infinite;
+filter:drop-shadow(0 0 15px rgba(255,255,255,.3));
 }
 
 @keyframes pulse{
@@ -416,7 +445,7 @@ transform:scale(1.08);
 footer{
 text-align:center;
 padding:50px 20px;
-color:#9ca3af;
+color:#cbd5e1;
 font-size:.9rem;
 }
 
@@ -610,25 +639,11 @@ Te gustan mucho pero jamás voy a dejar que tengas una 😭
 
 <div class="quote-grid">
 
-<div class="quote-card">
-✨ Porque me das paz.
-</div>
-
-<div class="quote-card">
-🫶 Porque siempre me escuchas.
-</div>
-
-<div class="quote-card">
-🌙 Porque contigo me siento segura.
-</div>
-
-<div class="quote-card">
-❤️ Porque eres mi hogar.
-</div>
-
-<div class="quote-card">
-☀️ Porque convertiste mis días en algo golden.
-</div>
+<div class="quote-card">✨ Porque me das paz.</div>
+<div class="quote-card">🫶 Porque siempre me escuchas.</div>
+<div class="quote-card">🌙 Porque contigo me siento segura.</div>
+<div class="quote-card">❤️ Porque eres mi hogar.</div>
+<div class="quote-card">☀️ Porque convertiste mis días en algo golden.</div>
 
 </div>
 
@@ -640,29 +655,17 @@ Te gustan mucho pero jamás voy a dejar que tengas una 😭
 
 <details>
 <summary>📨 ÁBREME SI TE SIENTES VIEJITO</summary>
-
-<p>
-Sí, ya tienes 30 😭❤️
-</p>
-
+<p>Sí, ya tienes 30 😭❤️</p>
 </details>
 
 <details>
 <summary>📨 ÁBREME SI NECESITAS RECORDAR QUE TE AMAMOS</summary>
-
-<p>
-Yo, Blacky y Lokis te amamos muchísimo 💖
-</p>
-
+<p>Yo, Blacky y Lokis te amamos muchísimo 💖</p>
 </details>
 
 <details>
 <summary>📨 ÁBREME SI AÚN RINDE EL VIEJITO</summary>
-
-<p>
-Investigación científica en proceso 💀
-</p>
-
+<p>Investigación científica en proceso 💀</p>
 </details>
 
 </section>
@@ -724,8 +727,6 @@ Hecho con muchísimo amor para Mattias ✨🌙
 </div>
 
 <script>
-
-/* INTRO */
 
 function startExperience(){
 document.querySelector('.intro-screen').classList.add('hidden');
