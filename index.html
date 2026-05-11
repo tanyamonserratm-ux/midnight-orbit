@@ -1,660 +1,835 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Mattias 🌌💖</title>
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: Arial, sans-serif;
-    }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mattias 💖</title>
 
-    body {
-      background:
-      radial-gradient(circle at top, rgba(139,92,246,.25), transparent 30%),
-      radial-gradient(circle at bottom, rgba(236,72,153,.2), transparent 30%),
-      linear-gradient(to bottom, #050816, #0f172a, black);
-      color: white;
-      overflow-x: hidden;
-    }
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800&display=swap" rel="stylesheet">
 
-    .music-button{
-      position:fixed;
-      top:20px;
-      right:20px;
-      background:rgba(255,255,255,.1);
-      padding:15px 22px;
-      border-radius:999px;
-      backdrop-filter:blur(10px);
-      z-index:9999;
-      cursor:pointer;
-      transition:.3s;
-    }
+<style>
 
-    .music-button:hover{
-      transform:scale(1.08);
-    }
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
+}
 
-    .f1-car{
-      position:fixed;
-      font-size:40px;
-      z-index:2;
-      opacity:.5;
-      animation:drive 18s linear infinite;
-    }
+html{
+scroll-behavior:smooth;
+}
 
-    .f1-1{
-      top:15%;
-    }
+body{
+background:
+radial-gradient(circle at top, rgba(139,92,246,.35), transparent 30%),
+radial-gradient(circle at bottom, rgba(236,72,153,.25), transparent 30%),
+linear-gradient(to bottom,#050816,#0f172a,#000);
+overflow-x:hidden;
+color:white;
+position:relative;
+}
 
-    .f1-2{
-      top:75%;
-      animation-delay:9s;
-    }
+/* GALAXIA */
 
-    @keyframes drive{
-      from{ left:-10%; }
-      to{ left:110%; }
-    }
+.stars{
+position:fixed;
+width:100%;
+height:100%;
+top:0;
+left:0;
+z-index:-3;
+overflow:hidden;
+}
 
-    .stars {
-      position: fixed;
-      width: 100%;
-      height: 100%;
-      z-index: -1;
-      overflow: hidden;
-    }
+.star{
+position:absolute;
+background:white;
+border-radius:50%;
+animation:twinkle infinite;
+opacity:.9;
+box-shadow:0 0 15px white;
+}
 
-    .star {
-      position: absolute;
-      width: 2px;
-      height: 2px;
-      background: white;
-      border-radius: 50%;
-      animation: twinkle 3s infinite;
-    }
+@keyframes twinkle{
+0%,100%{
+opacity:.2;
+transform:scale(.8);
+}
+50%{
+opacity:1;
+transform:scale(1.3);
+}
+}
 
-    @keyframes twinkle {
-      0%,100% { opacity: 0.2; }
-      50% { opacity: 1; }
-    }
+.galaxy{
+position:fixed;
+width:900px;
+height:900px;
+border-radius:50%;
+filter:blur(100px);
+z-index:-5;
+animation:floatGalaxy 15s infinite alternate;
+}
 
-    .heart {
-      position: fixed;
-      color: pink;
-      animation: float 6s linear infinite;
-      opacity: 0.7;
-      z-index: 999;
-    }
+.g1{
+top:-250px;
+left:-250px;
+background:radial-gradient(circle,rgba(168,85,247,.3),transparent 70%);
+}
 
-    @keyframes float {
-      from {
-        transform: translateY(100vh);
-      }
-      to {
-        transform: translateY(-120vh);
-      }
-    }
+.g2{
+bottom:-250px;
+right:-250px;
+background:radial-gradient(circle,rgba(236,72,153,.25),transparent 70%);
+}
 
-    .container {
-      width: 90%;
-      max-width: 1100px;
-      margin: auto;
-      padding: 40px 0;
-    }
+@keyframes floatGalaxy{
+from{
+transform:translateY(0px);
+}
+to{
+transform:translateY(40px);
+}
+}
 
-    .hero {
-      text-align: center;
-      padding: 80px 0;
-    }
+/* CORAZONES */
 
-    .hero h1 {
-      font-size: 5rem;
-      background: linear-gradient(to right, pink, white, lightblue);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      margin-bottom: 20px;
-    }
+.heart{
+position:fixed;
+top:-50px;
+font-size:25px;
+animation:fallHeart linear forwards;
+z-index:999;
+pointer-events:none;
+}
 
-    .hero p {
-      color: #d1d5db;
-      font-size: 1.3rem;
-      line-height: 1.7;
-    }
+@keyframes fallHeart{
+to{
+transform:translateY(120vh) rotate(360deg);
+opacity:0;
+}
+}
 
-    .badges {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 15px;
-      margin-top: 40px;
-    }
+/* F1 */
 
-    .badge {
-      background: rgba(255,255,255,0.1);
-      padding: 15px 25px;
-      border-radius: 999px;
-      backdrop-filter: blur(10px);
-    }
+.f1-car{
+position:fixed;
+font-size:42px;
+z-index:2;
+opacity:.5;
+animation:driveRight 15s linear infinite;
+}
 
-    .section {
-      margin-top: 100px;
-    }
+.f1-1{
+top:20%;
+}
 
-    .section h2 {
-      text-align: center;
-      margin-bottom: 40px;
-      font-size: 3rem;
-      color: pink;
-    }
+.f1-2{
+top:75%;
+animation-delay:8s;
+}
 
-    .gallery {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 30px;
-    }
+@keyframes driveRight{
+from{
+transform:translateX(-20vw);
+}
+to{
+transform:translateX(120vw);
+}
+}
 
-    .card {
-      background: rgba(255,255,255,0.05);
-      border-radius: 30px;
-      overflow: hidden;
-      backdrop-filter: blur(10px);
-      transition: 0.4s;
-    }
+/* MUSICA */
 
-    .card:hover {
-      transform: scale(1.02);
-    }
+.music-button{
+position:fixed;
+top:20px;
+right:20px;
+background:rgba(255,255,255,.1);
+padding:15px 20px;
+border-radius:999px;
+backdrop-filter:blur(10px);
+cursor:pointer;
+z-index:9999;
+transition:.3s;
+}
 
-    .card img {
-      width: 100%;
-      height: 450px;
-      object-fit: cover;
-    }
+.music-button:hover{
+transform:scale(1.08);
+}
 
-    .card-content {
-      padding: 25px;
-    }
+/* CONTENIDO */
 
-    .card-content h3 {
-      color: pink;
-      margin-bottom: 10px;
-    }
+.container{
+width:90%;
+max-width:1200px;
+margin:auto;
+padding:50px 0;
+}
 
-    .love-box {
-      background: rgba(255,255,255,0.05);
-      padding: 40px;
-      border-radius: 40px;
-      line-height: 1.8;
-      font-size: 1.2rem;
-    }
+.hero{
+min-height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+text-align:center;
+flex-direction:column;
+}
 
-    details {
-      background: rgba(255,255,255,0.05);
-      padding: 20px;
-      border-radius: 25px;
-      margin-bottom: 20px;
-      cursor: pointer;
-    }
+.hero h1{
+font-size:6rem;
+font-weight:800;
+background:linear-gradient(to right,#ff7ac6,#fff,#7dd3fc);
+-webkit-background-clip:text;
+-webkit-text-fill-color:transparent;
+margin-bottom:20px;
+}
 
-    summary {
-      font-size: 1.2rem;
-      font-weight: bold;
-      color: pink;
-    }
+.hero p{
+max-width:900px;
+line-height:1.9;
+font-size:1.3rem;
+color:#d1d5db;
+}
 
-    details p {
-      margin-top: 20px;
-      line-height: 1.8;
-      color: #d1d5db;
-    }
+.badges{
+display:flex;
+gap:15px;
+flex-wrap:wrap;
+justify-content:center;
+margin-top:40px;
+}
 
-    .final {
-      text-align: center;
-      padding: 80px 30px;
-      background: rgba(255,255,255,0.05);
-      border-radius: 40px;
-      margin-top: 100px;
-    }
+.badge{
+background:rgba(255,255,255,.08);
+padding:14px 25px;
+border-radius:999px;
+backdrop-filter:blur(10px);
+}
 
-    .final h2 {
-      font-size: 4rem;
-      margin-bottom: 30px;
-      color: pink;
-    }
+.section{
+margin-top:120px;
+}
 
-    .final p {
-      line-height: 1.8;
-      color: #d1d5db;
-      font-size: 1.2rem;
-      margin-bottom: 20px;
-    }
+.section h2{
+text-align:center;
+font-size:3.5rem;
+margin-bottom:50px;
+color:#ff9ed6;
+}
 
-    .music {
-      text-align: center;
-      margin-top: 50px;
-      color: gray;
-    }
+.box{
+background:rgba(255,255,255,.06);
+border:1px solid rgba(255,255,255,.08);
+padding:40px;
+border-radius:35px;
+backdrop-filter:blur(12px);
+line-height:2;
+font-size:1.1rem;
+color:#e5e7eb;
+}
 
-    .quote-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 25px;
-      margin-top: 40px;
-    }
+.gallery{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+gap:30px;
+}
 
-    .quote-card {
-      background: rgba(255,255,255,0.05);
-      border-radius: 30px;
-      padding: 30px;
-      line-height: 1.8;
-      backdrop-filter: blur(10px);
-      transition: 0.4s;
-    }
+.card{
+background:rgba(255,255,255,.06);
+border-radius:30px;
+overflow:hidden;
+transition:.4s;
+backdrop-filter:blur(12px);
+}
 
-    .quote-card:hover {
-      transform: translateY(-8px);
-    }
+.card:hover{
+transform:translateY(-10px);
+}
 
-    .interests {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 25px;
-      margin-top: 50px;
-    }
+.card img{
+width:100%;
+height:450px;
+object-fit:cover;
+}
 
-    .interest-box {
-      background: rgba(255,255,255,0.05);
-      border-radius: 30px;
-      overflow: hidden;
-      backdrop-filter: blur(10px);
-    }
+.card-content{
+padding:25px;
+}
 
-    .interest-box img {
-      width: 100%;
-      height: 250px;
-      object-fit: cover;
-    }
+.card-content h3{
+margin-bottom:15px;
+color:#ffb3de;
+}
 
-    .interest-box div {
-      padding: 25px;
-    }
+.quote-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:25px;
+}
 
-    .counter {
-      text-align: center;
-      margin-top: 80px;
-      font-size: 2rem;
-      color: pink;
-      line-height: 1.8;
-    }
+.quote-card{
+background:rgba(255,255,255,.05);
+padding:30px;
+border-radius:30px;
+line-height:1.8;
+backdrop-filter:blur(10px);
+transition:.4s;
+}
 
-    .big-love {
-      font-size: 6rem;
-      text-align: center;
-      margin-top: 80px;
-      animation: pulse 2s infinite;
-    }
+.quote-card:hover{
+transform:translateY(-8px);
+}
 
-    @keyframes pulse {
-      0%,100% { transform: scale(1); }
-      50% { transform: scale(1.08); }
-    }
+.category-box{
+background:rgba(255,255,255,.05);
+padding:35px;
+border-radius:35px;
+backdrop-filter:blur(12px);
+margin-bottom:35px;
+transition:.4s;
+}
 
-    @media(max-width: 768px){
-      .hero h1 {
-        font-size: 3rem;
-      }
+.category-box:hover{
+transform:translateY(-5px);
+}
 
-      .final h2 {
-        font-size: 2.5rem;
-      }
-    }
-  </style>
+.category-title{
+font-size:2rem;
+margin-bottom:20px;
+color:#ffb3de;
+}
+
+details{
+background:rgba(255,255,255,.05);
+padding:25px;
+border-radius:25px;
+margin-bottom:20px;
+cursor:pointer;
+}
+
+summary{
+font-size:1.2rem;
+font-weight:700;
+color:#ff9ed6;
+}
+
+details p{
+margin-top:20px;
+line-height:1.9;
+color:#d1d5db;
+}
+
+.final{
+text-align:center;
+padding:100px 30px;
+}
+
+.final h2{
+font-size:5rem;
+margin-bottom:30px;
+color:#ffb3de;
+}
+
+.final p{
+max-width:900px;
+margin:auto;
+line-height:2;
+font-size:1.2rem;
+color:#d1d5db;
+margin-bottom:20px;
+}
+
+.big-love{
+font-size:7rem;
+text-align:center;
+margin-top:80px;
+animation:pulse 2s infinite;
+}
+
+@keyframes pulse{
+0%,100%{
+transform:scale(1);
+}
+50%{
+transform:scale(1.08);
+}
+}
+
+footer{
+text-align:center;
+padding:60px 20px;
+color:#9ca3af;
+}
+
+@media(max-width:768px){
+
+.hero h1{
+font-size:3.5rem;
+}
+
+.section h2{
+font-size:2.5rem;
+}
+
+.final h2{
+font-size:3rem;
+}
+
+}
+
+</style>
 </head>
+
 <body>
 
 <audio id="bgMusic" autoplay loop>
-  <source src="https://files.catbox.moe/8v5m5x.mp3" type="audio/mpeg">
+<source src="https://files.catbox.moe/8v5m5x.mp3" type="audio/mpeg">
 </audio>
 
 <div class="music-button" onclick="toggleMusic()">
 🎵 Daylight
 </div>
 
+<div class="stars"></div>
+
+<div class="galaxy g1"></div>
+<div class="galaxy g2"></div>
+
 <div class="f1-car f1-1">🏎️</div>
 <div class="f1-car f1-2">🏎️</div>
 
-<div class="stars"></div>
-
 <div class="container">
 
-  <section class="hero">
-    <p>✨ Feliz cumpleaños Mattias ✨</p>
-    <h1>LOS 30 TE PEGARON</h1>
+<section class="hero">
 
-    <p>
-      Pero sigues siendo el hombre más hermoso, paciente,
-      amoroso y especial del universo 🌌
-    </p>
+<p>🌌 Feliz cumpleaños Mattias 🌌</p>
 
-    <div class="badges">
-      <div class="badge">🏎️ Fan de F1</div>
-      <div class="badge">🌙 Astronomía lover</div>
-      <div class="badge">🎮 Shooter gamer</div>
-      <div class="badge">👴 Anciano oficialmente</div>
-    </div>
-  </section>
+<h1>LOS 30 TE PEGARON</h1>
 
-  <section class="section">
-    <h2>Gracias por todo ❤️</h2>
+<p>
+Pero sigues siendo el hombre más lindo, paciente,
+amoroso y especial del universo entero ✨
+</p>
 
-    <div class="love-box">
-      Gracias por siempre estar conmigo, por escucharme incluso cuando paso reclamando TODO el día y estoy estresada 😭
-      <br><br>
-      Me encanta la calma que me transmites. Honestamente siento que mi vida ya no es oscura sino dorada contigo ✨
-      <br><br>
-      Amo cómo me abrazas, cómo me cuidas y cómo siempre intentas hacerme sentir mejor.
-      <br><br>
-      Eres mi persona favorita, mi mejor amigo y mi familia en esta tierra.
-      <br><br>
-      Sé que mi papá estaría demasiado feliz de saber que estoy con alguien que me cuida tanto como él me cuidaba ❤️
-      <br><br>
-      Estoy demasiado agradecida con la vida por haberte encontrado.
-      <br><br>
-      Y aunque te gusten las motos JAMÁS voy a dejar que tengas una 😭 porque te puedes morir y honestamente no sobreviviría emocionalmente a eso. Puedes verlas nomás JAJA.
-      <br><br>
-      Amo verte emocionarte viendo Formula 1 aunque yo no entienda mucho 💀 pero si tú eres feliz viendo autos dar vueltas entonces yo apoyo ese deporte con che copete.
-      <br><br>
-      Lokis oficialmente te aceptó como papá aunque al principio ni la pescabas mucho 😭 y ahora es literalmente tu hija.
-      <br><br>
-      Blacky es nuestro hijo oficial y como nunca lo retas, me toca hacerlo a mí JAJA.
-      <br><br>
-      Blacky y Lokis te aman muchísimo y te extrañan demasiado cuando no estás. Siempre se ponen felices cuando te ven.
-      <br><br>
-      Honestamente no esperamos el día de vivir todos juntos 💖
-    </div>
-  </section>
+<div class="badges">
+<div class="badge">🏎️ Formula 1 lover</div>
+<div class="badge">🌙 Astronomy boy</div>
+<div class="badge">🎮 Gamer shooter</div>
+<div class="badge">👴 Oficialmente viejito</div>
+<div class="badge">🐶 Papá de Blacky</div>
+<div class="badge">🐱 Papá aprobado por Lokis</div>
+</div>
 
-  <section class="section">
-    <h2>Nuestra mini familia 💖</h2>
+</section>
 
-    <div class="gallery">
-      <div class="card">
-        <img src="https://i.imgur.com/3hcy4zM.jpg">
-        <div class="card-content">
-          <h3>Blacky cuidando al viejito</h3>
-          <p>
-            Blacky supervisando que Mattias siga respirando
-            mientras duerme como abuelo de 30 años 💀
-          </p>
-        </div>
-      </div>
+<section class="section">
 
-      <div class="card">
-        <img src="https://i.imgur.com/fOWXh5K.jpg">
-        <div class="card-content">
-          <h3>Lokis siendo reina</h3>
-          <p>
-            Lokis aprobando oficialmente a su humano favorito 🐱✨
-          </p>
-        </div>
-      </div>
-    </div>
-  </section>
+<h2>💖 Lo que quiero que sepas</h2>
 
-  <section class="section">
-    <h2>🐶🐱 Opiniones oficiales</h2>
+<div class="box">
 
-    <details>
-      <summary>🐶 Relatorio de Blacky</summary>
-      <p>
-        “Mi humano favorito me carga, me da cariño y me deja dormir con él aunque ocupe toda la cama. A veces ronca fuerte pero lo perdono porque me ama muchísimo.”
-      </p>
-    </details>
+Gracias por siempre escucharme incluso cuando estoy todo el día reclamando y estresada 😭
 
-    <details>
-      <summary>🐱 Relatorio de Lokis</summary>
-      <p>
-        “Como gata calico oficialmente complicada, apruebo a Mattias. Respeta mi autoridad y acepta que yo mande sobre todos.”
-      </p>
-    </details>
-  </section>
+<br><br>
 
-  <section class="section">
-    <h2>Cartas espaciales 🚀</h2>
+Me encanta la calma que me transmites.
+Honestamente siento que mis días dejaron de ser oscuros y ahora son dorados contigo ✨
 
-    <details>
-      <summary>📨 ÁBREME SI YA TE SIENTES VIEJITO</summary>
-      <p>
-        Felices 30 viejito 😭💖 Aunque ya hagas sonidos al levantarte de la cama, sigues siendo el niño más lindo del mundo para mí.
-      </p>
-    </details>
+<br><br>
 
-    <details>
-      <summary>📨 ÁBREME SI NECESITAS RECORDAR QUE TE AMAMOS</summary>
-      <p>
-        Yo, Blacky y Lokis te amamos muchísimo. Gracias por tratarnos tan bien y cuidar siempre de nosotros.
-      </p>
-    </details>
+Eres mi persona favorita, mi mejor amigo y mi familia en esta tierra.
 
-    <details>
-      <summary>📨 ÁBREME SI AÚN SE TE PARA</summary>
-      <p>
-        Esta sección científica era completamente necesaria JAJAJA 💀❤️
-      </p>
-    </details>
-  </section>
+<br><br>
 
-  <section class="section">
-    <h2>100 cosas que amo de ti ✨</h2>
+Mi papá probablemente estaría demasiado feliz de saber que estoy con alguien que me cuida tanto como él me cuidaba ❤️
 
-    <div class="quote-grid">
-      <div class="quote-card">❤️ Amo cómo me abrazas.</div>
-      <div class="quote-card">🌙 Amo cómo me escuchas aunque reclame todo el día.</div>
-      <div class="quote-card">🏎️ Amo verte emocionarte por la Formula 1.</div>
-      <div class="quote-card">🎮 Amo tu lado gamer intenso.</div>
-      <div class="quote-card">🐶 Amo cómo Blacky te ama.</div>
-      <div class="quote-card">🐱 Amo que Lokis te escogiera como papá.</div>
-      <div class="quote-card">✨ Amo la paz que me transmites.</div>
-      <div class="quote-card">💖 Amo sentirme segura contigo.</div>
-      <div class="quote-card">🌌 Amo imaginar nuestra vida juntos.</div>
-      <div class="quote-card">👴 Amo molestarte porque ya eres un señor de 30.</div>
-      <div class="quote-card">😭 Amo que me aguantes incluso intensa y dramática.</div>
-      <div class="quote-card">🚀 Amo que seas mi lugar favorito.</div>
-      <div class="quote-card">📄 Me casaría contigo incluso con anillos de papel.</div>
-      <div class="quote-card">☀️ Mis días dejaron de ser rojos y ahora son dorados contigo.</div>
-      <div class="quote-card">🌠 Si existes tú, honestamente ya gané en la vida.</div>
-      <div class="quote-card">💀 Será que aún se le para al viejito o ya habrá que comprar viagra.</div>
-      <div class="quote-card">🫶 Amo que siempre me animes incluso en mis peores días.</div>
-      <div class="quote-card">🌙 Amo pensar que eres literalmente mi hogar.</div>
-    </div>
-  </section>
+<br><br>
 
-  <section class="section">
-    <h2>Cosas favoritas de Mattias 🌌</h2>
+Estoy demasiado agradecida con la vida de haberte encontrado.
 
-    <div class="interests">
-      <div class="interest-box">
-        <img src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?q=80&w=1200&auto=format&fit=crop">
-        <div>
-          <h3>🏎️ Formula 1 energy</h3>
-          <p>Te emocionas como niño pequeño viendo Formula 1 y honestamente eso me parece demasiado tierno aunque yo no entienda nada JAJA.</p>
-        </div>
-      </div>
+<br><br>
 
-      <div class="interest-box">
-        <img src="https://images.unsplash.com/photo-1462331940025-496dfbfc7564?q=80&w=1200&auto=format&fit=crop">
-        <div>
-          <h3>🌌 Galaxias y astronomía</h3>
-          <p>Porque incluso el universo entero se queda pequeño comparado a cuánto te amo.</p>
-        </div>
-      </div>
+Y aunque te gusten las motos NO voy a dejar que tengas una porque honestamente me moriría si algo te pasa 😭 puedes mirarlas nomás JAJA.
 
-      <div class="interest-box">
-        <img src="https://images.unsplash.com/photo-1542751371-adc38448a05e?q=80&w=1200&auto=format&fit=crop">
-        <div>
-          <h3>🎮 Shooter gamer</h3>
-          <p>Call of Duty, The Division y probablemente gritarle a randoms online.</p>
-        </div>
-      </div>
+<br><br>
 
-      <div class="interest-box">
-        <img src="https://images.unsplash.com/photo-1558981806-ec527fa84c39?q=80&w=1200&auto=format&fit=crop">
-        <div>
-          <h3>🏍️ Moto lover</h3>
-          <p>Las motos son lindas PERO tú no vas a tener una porque no pienso dejar que te mueras 😭 puedes admirarlas desde lejitos.</p>
-        </div>
-      </div>
-    </div>
-  </section>
+Amo verte emocionarte por la Formula 1 aunque yo no entienda nada 💀
+pero si tú eres feliz viendo autos dar vueltas entonces yo feliz también.
+Es un deporte con che copete 🏎️
 
-  <div class="counter">
-    ⏳ 30 años siendo lindo<br>
-    ❤️ Miles de momentos amándote<br>
-    🌙 Y toda una vida más por delante juntos
-  </div>
+<br><br>
 
-  <div class="big-love">
-    ❤️❤️❤️
-  </div>
+Lokis oficialmente te aceptó como papá aunque al principio ni la pescabas mucho 😭 y ahora es literalmente tu hija.
 
-  <section class="section">
-    <h2>Taylor Swift coded ✨</h2>
+<br><br>
 
-    <div class="quote-grid">
-      <div class="quote-card">✨ “I once believed love would be burning red, but it's golden.”</div>
-      <div class="quote-card">📄 “I'd marry you with paper rings.”</div>
-      <div class="quote-card">🌙 “You are what you love.”</div>
-      <div class="quote-card">💖 Desde que llegaste, mis días se sienten dorados.</div>
-      <div class="quote-card">🌌 En cualquier universo volvería a escogerte.</div>
-      <div class="quote-card">🫶 Gracias por hacerme sentir amada todos los días.</div>
-    </div>
-  </section>
+Blacky es nuestro hijo oficial y como nunca lo retas me toca hacerlo a mí JAJA.
 
-  <section class="section">
-    <h2>💖 Motivos por los que te elegí</h2>
+<br><br>
 
-    <div class="quote-grid">
-      <div class="quote-card">✨ Porque me das paz incluso en mis peores días.</div>
-      <div class="quote-card">🫶 Porque siempre me escuchas aunque reclame todo el día.</div>
-      <div class="quote-card">🌙 Porque contigo me siento segura.</div>
-      <div class="quote-card">❤️ Porque siempre me haces sentir amada.</div>
-      <div class="quote-card">🐶 Porque amas a Blacky como si fuera tu hijo.</div>
-      <div class="quote-card">🐱 Porque Lokis te escogió oficialmente como papá.</div>
-      <div class="quote-card">☀️ Porque convertiste mis días en algo golden.</div>
-      <div class="quote-card">🌌 Porque eres literalmente mi hogar.</div>
-    </div>
-  </section>
+Blacky y Lokis te aman muchísimo y siempre se ponen felices cuando te ven ❤️
 
-  <section class="section">
-    <h2>☀️ Efectos secundarios de amarte</h2>
+<br><br>
 
-    <div class="quote-grid">
-      <div class="quote-card">💀 Ahora me preocupo porque ya tienes 30.</div>
-      <div class="quote-card">😭 Quiero abrazarte todo el tiempo.</div>
-      <div class="quote-card">✨ Me haces sentir tranquila y protegida.</div>
-      <div class="quote-card">🏡 Ya quiero vivir contigo y los niños peludos.</div>
-      <div class="quote-card">📄 Sí me casaría contigo con paper rings.</div>
-      <div class="quote-card">👴 Aún sigo investigando si el viejito rinde.</div>
-      <div class="quote-card">🌠 En cualquier universo volvería a escogerte.</div>
-      <div class="quote-card">💖 Estoy agradecida todos los días de haberte encontrado.</div>
-    </div>
-  </section>
+No esperamos el día de vivir todos juntos 🌙✨
 
-  <section class="section">
-    <h2>🌌 Nuestra historia</h2>
+<br><br>
 
-    <div class="love-box">
-      Todo empezó poco a poco...
-      <br><br>
-      Y sin darme cuenta te convertiste en alguien demasiado importante para mí.
-      <br><br>
-      Después Blacky te adoptó oficialmente como su humano favorito 🐶
-      <br><br>
-      Y Lokis... bueno... al principio ni te pescaba 😭 pero ahora literalmente eres su papá.
-      <br><br>
-      Honestamente ya no puedo imaginar mi vida sin ti.
-      <br><br>
-      Gracias por hacerme sentir querida, protegida y acompañada siempre.
-    </div>
-  </section>
+Y bueno...
+ya tienes 30...
+¿será que aún se le para al viejito?
+¿o habrá que comprar viagra? 💀
 
-  <section class="final">
-    <h2>Feliz cumpleaños mi amor ❤️</h2>
+</div>
 
-    <p>
-      Perdón por no enviarte algo físico 😭
-      No sabía la dirección de la nueva casa,
-      pero quería hacerte algo especial que pudieras guardar siempre.
-    </p>
+</section>
 
-    <p>
-      Gracias por existir.
-      Gracias por amarme.
-      Gracias por cuidar de nosotros.
-    </p>
+<section class="section">
 
-    <p>
-      Te amo muchísimo Mattias 🌙✨
-    </p>
+<h2>📸 Nuestra mini familia</h2>
 
-    <p>
-      Gracias por existir en mi vida, por cuidar de mí, por amar a nuestros hijos peludos y por hacer que incluso los días difíciles se sientan más fáciles.
-    </p>
+<div class="gallery">
 
-    <p>
-      Ojalá podamos seguir celebrando muchísimos cumpleaños más juntos.
-    </p>
-  </section>
+<div class="card">
 
-  <div class="music">
-    🎵 Daylight — Taylor Swift 🎵
-  </div>
+<img src="https://i.imgur.com/3hcy4zM.jpg">
+
+<div class="card-content">
+<h3>🐶 Blacky el salchicha oficial</h3>
+
+<p>
+Blacky ama demasiado a su papá Mattias.
+Nunca lo reta así que claramente el villano de la familia soy yo 💀❤️
+</p>
+
+</div>
+</div>
+
+<div class="card">
+
+<img src="https://i.imgur.com/fOWXh5K.jpg">
+
+<div class="card-content">
+<h3>🐱 Lokis la gata calico</h3>
+
+<p>
+Al principio ni lo pescaba mucho...
+y ahora literalmente lo adoptó como papá 😭✨
+</p>
+
+</div>
+</div>
+
+</div>
+
+</section>
+
+<section class="section">
+
+<h2>🌌 Cosas que le gustan al viejito</h2>
+
+<div class="category-box">
+
+<div class="category-title">
+🏎️ Formula 1
+</div>
+
+<p>
+No entiendo nada pero amo verte feliz viendo Formula 1 durante horas JAJA ❤️
+</p>
+
+</div>
+
+<div class="category-box">
+
+<div class="category-title">
+🌙 Galaxias y astronomía
+</div>
+
+<p>
+Tiene demasiado sentido que te guste el espacio porque honestamente pareces salido de otro universo ✨
+</p>
+
+</div>
+
+<div class="category-box">
+
+<div class="category-title">
+🎮 Shooter games
+</div>
+
+<p>
+Call of Duty, The Division y probablemente peleando con randoms online 😭
+</p>
+
+</div>
+
+<div class="category-box">
+
+<div class="category-title">
+🏍️ Motos
+</div>
+
+<p>
+Sí, te gustan mucho las motos...
+pero jamás voy a dejar que tengas una porque NO pienso dejar que te mueras 😭
+</p>
+
+</div>
+
+</section>
+
+<section class="section">
+
+<h2>💖 Motivos por los que te elegí</h2>
+
+<div class="quote-grid">
+
+<div class="quote-card">
+✨ Porque me das paz incluso en mis peores días.
+</div>
+
+<div class="quote-card">
+🫶 Porque siempre me escuchas aunque reclame todo el día.
+</div>
+
+<div class="quote-card">
+🌙 Porque contigo me siento segura.
+</div>
+
+<div class="quote-card">
+❤️ Porque siempre me haces sentir amada.
+</div>
+
+<div class="quote-card">
+🐶 Porque amas a Blacky como si fuera tu hijo.
+</div>
+
+<div class="quote-card">
+🐱 Porque Lokis te escogió oficialmente como papá.
+</div>
+
+<div class="quote-card">
+☀️ Porque convertiste mis días en algo golden.
+</div>
+
+<div class="quote-card">
+🌌 Porque eres literalmente mi hogar.
+</div>
+
+</div>
+
+</section>
+
+<section class="section">
+
+<h2>✨ Taylor Swift coded</h2>
+
+<div class="quote-grid">
+
+<div class="quote-card">
+☀️ “I once believed love would be burning red, but it's golden.”
+</div>
+
+<div class="quote-card">
+📄 “I'd marry you with paper rings.”
+</div>
+
+<div class="quote-card">
+🌙 Desde que llegaste, mis días se sienten dorados.
+</div>
+
+<div class="quote-card">
+💖 En cualquier universo volvería a escogerte.
+</div>
+
+<div class="quote-card">
+🫶 Gracias por hacerme sentir amada todos los días.
+</div>
+
+<div class="quote-card">
+👴 Feliz cumpleaños viejito precioso.
+</div>
+
+</div>
+
+</section>
+
+<section class="section">
+
+<h2>📨 Cartas espaciales</h2>
+
+<details>
+<summary>📨 ÁBREME SI TE SIENTES VIEJITO</summary>
+
+<p>
+Sí, ya tienes 30.
+Sí, haces sonidos al levantarte.
+Sí, probablemente tu espalda duele.
+Pero sigues siendo el niño más lindo del universo para mí 😭❤️
+</p>
+
+</details>
+
+<details>
+<summary>📨 ÁBREME SI NECESITAS RECORDAR QUE TE AMAMOS</summary>
+
+<p>
+Yo, Blacky y Lokis te amamos muchísimo.
+Gracias por tratarnos tan bonito siempre 💖
+</p>
+
+</details>
+
+<details>
+<summary>📨 ÁBREME SI NECESITAS UN ABRAZO</summary>
+
+<p>
+Ojalá pudiera abrazarte cada vez que te sientes cansado o triste.
+Quiero seguir cuidándote toda la vida 🌙
+</p>
+
+</details>
+
+<details>
+<summary>📨 ÁBREME SI AÚN RINDE EL VIEJITO</summary>
+
+<p>
+Esta investigación científica sigue en proceso 💀
+</p>
+
+</details>
+
+</section>
+
+<div class="big-love">
+❤️❤️❤️
+</div>
+
+<section class="final">
+
+<h2>Te amo Mattias 🌌</h2>
+
+<p>
+Gracias por existir.
+Gracias por cuidarme.
+Gracias por amar a nuestros hijos peludos.
+</p>
+
+<p>
+Espero que podamos celebrar muchísimos cumpleaños más juntos ✨
+</p>
+
+<p>
+Y honestamente...
+si pudiera volver a vivir mi vida,
+volvería a escogerte siempre ❤️
+</p>
+
+</section>
+
+<footer>
+
+Hecho con muchísimo amor para Mattias ✨🌙
+
+</footer>
 
 </div>
 
 <script>
-  const stars = document.querySelector('.stars');
 
-  for(let i=0;i<120;i++){
-    const star = document.createElement('div');
-    star.classList.add('star');
-    star.style.top = Math.random()*100 + '%';
-    star.style.left = Math.random()*100 + '%';
-    star.style.animationDuration = (Math.random()*3+2)+'s';
-    stars.appendChild(star);
-  }
+/* ESTRELLAS */
 
-  function createHeart(){
-    const heart = document.createElement('div');
-    heart.classList.add('heart');
-    heart.innerHTML = '❤️';
-    heart.style.left = Math.random()*100 + 'vw';
-    heart.style.fontSize = (Math.random()*20+10)+'px';
-    document.body.appendChild(heart);
+const stars=document.querySelector('.stars');
 
-    setTimeout(()=>{
-      heart.remove();
-    },6000);
-  }
+for(let i=0;i<400;i++){
 
-  setInterval(createHeart, 300);
+const star=document.createElement('div');
+
+star.classList.add('star');
+
+const size=Math.random()*4;
+
+star.style.width=size+'px';
+star.style.height=size+'px';
+
+star.style.left=Math.random()*100+'vw';
+star.style.top=Math.random()*100+'vh';
+
+star.style.animationDuration=(Math.random()*3+2)+'s';
+
+stars.appendChild(star);
+
+}
+
+/* CORAZONES */
+
+function createHeart(){
+
+const heart=document.createElement('div');
+
+heart.classList.add('heart');
+
+heart.innerHTML=['💖','💕','💗','💘'][Math.floor(Math.random()*4)];
+
+heart.style.left=Math.random()*100+'vw';
+
+heart.style.fontSize=(Math.random()*25+15)+'px';
+
+heart.style.animationDuration=(Math.random()*5+4)+'s';
+
+document.body.appendChild(heart);
+
+setTimeout(()=>{
+heart.remove();
+},9000);
+
+}
+
+setInterval(createHeart,250);
+
+/* MUSICA */
+
+const music=document.getElementById('bgMusic');
+
+music.volume=0.6;
+
+window.addEventListener('load',()=>{
+
+const playPromise=music.play();
+
+if(playPromise!==undefined){
+
+playPromise.catch(()=>{
+
+document.body.addEventListener('click',()=>{
+
+music.play();
+
+},{once:true});
+
+});
+
+}
+
+});
+
 function toggleMusic(){
-    const music=document.getElementById('bgMusic');
 
-    if(music.paused){
-      music.play();
-    }else{
-      music.pause();
-    }
-  }
+if(music.paused){
 
-  window.addEventListener('click',()=>{
-    document.getElementById('bgMusic').play();
-  },{once:true});
+music.play();
+
+}else{
+
+music.pause();
+
+}
+
+}
+
 </script>
 
 </body>
