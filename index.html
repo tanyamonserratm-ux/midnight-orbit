@@ -197,6 +197,70 @@
       color: gray;
     }
 
+    .quote-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 25px;
+      margin-top: 40px;
+    }
+
+    .quote-card {
+      background: rgba(255,255,255,0.05);
+      border-radius: 30px;
+      padding: 30px;
+      line-height: 1.8;
+      backdrop-filter: blur(10px);
+      transition: 0.4s;
+    }
+
+    .quote-card:hover {
+      transform: translateY(-8px);
+    }
+
+    .interests {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 25px;
+      margin-top: 50px;
+    }
+
+    .interest-box {
+      background: rgba(255,255,255,0.05);
+      border-radius: 30px;
+      overflow: hidden;
+      backdrop-filter: blur(10px);
+    }
+
+    .interest-box img {
+      width: 100%;
+      height: 250px;
+      object-fit: cover;
+    }
+
+    .interest-box div {
+      padding: 25px;
+    }
+
+    .counter {
+      text-align: center;
+      margin-top: 80px;
+      font-size: 2rem;
+      color: pink;
+      line-height: 1.8;
+    }
+
+    .big-love {
+      font-size: 6rem;
+      text-align: center;
+      margin-top: 80px;
+      animation: pulse 2s infinite;
+    }
+
+    @keyframes pulse {
+      0%,100% { transform: scale(1); }
+      50% { transform: scale(1.08); }
+    }
+
     @media(max-width: 768px){
       .hero h1 {
         font-size: 3rem;
@@ -319,6 +383,73 @@
       </p>
     </details>
   </section>
+
+  <section class="section">
+    <h2>100 cosas que amo de ti ✨</h2>
+
+    <div class="quote-grid">
+      <div class="quote-card">❤️ Amo cómo me abrazas.</div>
+      <div class="quote-card">🌙 Amo que siempre me escuches.</div>
+      <div class="quote-card">🏎️ Amo verte emocionarte por la F1.</div>
+      <div class="quote-card">🎮 Amo cuando juegas como gamer competitivo.</div>
+      <div class="quote-card">🐶 Amo cómo amas a Blacky.</div>
+      <div class="quote-card">🐱 Amo cómo Lokis te escogió.</div>
+      <div class="quote-card">✨ Amo que seas paciente conmigo.</div>
+      <div class="quote-card">💖 Amo que me hagas sentir segura.</div>
+      <div class="quote-card">🌌 Amo imaginar un futuro contigo.</div>
+      <div class="quote-card">👴 Amo molestarte porque ya tienes 30.</div>
+      <div class="quote-card">😭 Amo que me aguantes incluso intensa.</div>
+      <div class="quote-card">🚀 Amo que seas literalmente mi persona favorita.</div>
+    </div>
+  </section>
+
+  <section class="section">
+    <h2>Cosas favoritas de Mattias 🌌</h2>
+
+    <div class="interests">
+      <div class="interest-box">
+        <img src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?q=80&w=1200&auto=format&fit=crop">
+        <div>
+          <h3>🏎️ Formula 1 energy</h3>
+          <p>Porque claramente Mattias nació para manejar a 300km/h emocionalmente.</p>
+        </div>
+      </div>
+
+      <div class="interest-box">
+        <img src="https://images.unsplash.com/photo-1462331940025-496dfbfc7564?q=80&w=1200&auto=format&fit=crop">
+        <div>
+          <h3>🌌 Galaxias y astronomía</h3>
+          <p>Porque incluso el universo entero se queda pequeño comparado a cuánto te amo.</p>
+        </div>
+      </div>
+
+      <div class="interest-box">
+        <img src="https://images.unsplash.com/photo-1542751371-adc38448a05e?q=80&w=1200&auto=format&fit=crop">
+        <div>
+          <h3>🎮 Shooter gamer</h3>
+          <p>Call of Duty, The Division y probablemente gritarle a randoms online.</p>
+        </div>
+      </div>
+
+      <div class="interest-box">
+        <img src="https://images.unsplash.com/photo-1558981806-ec527fa84c39?q=80&w=1200&auto=format&fit=crop">
+        <div>
+          <h3>🏍️ Moto lover</h3>
+          <p>Porque verse cool es parte importante de su personalidad.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="counter">
+    ⏳ 30 años siendo lindo<br>
+    ❤️ Miles de momentos amándote<br>
+    🌙 Y toda una vida más por delante juntos
+  </div>
+
+  <div class="big-love">
+    ❤️❤️❤️
+  </div>
 
   <section class="final">
     <h2>Feliz cumpleaños mi amor ❤️</h2>
